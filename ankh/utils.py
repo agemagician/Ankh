@@ -34,5 +34,5 @@ class CSVDataset(Dataset):
         return self.df.shape[0]
     
     def __getitem__(self, index):
-        return self.df.iloc[index, self.seq_col_name], self.df.iloc[index, self.label_col_name]
+        return list(self.df.iloc[index, self.seq_col_name]), self.df.iloc[index, self.label_col_name]
 
