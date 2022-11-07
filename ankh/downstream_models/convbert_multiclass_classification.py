@@ -7,18 +7,20 @@ import transformers.models.convbert as c_bert
 class ConvBertForMultiClassClassification(nn.Module):
     def __init__(self, ntoken, ninp, nhead, nhid, nlayers, convsize=9, dropout=0.5):
         super(ConvBertForMultiClassClassification, self).__init__()
-        import transformers.models.convbert as cBert
+
         self.model_type = 'Transformer'
         self.num_labels = ntoken
 
-        encoder_layers_Config = c_bert.ConvBertConfig(hidden_size=ninp,
-                                   num_attention_heads=nhead,
-                                   intermediate_size=nhid,
-                                   conv_kernel_size=convsize,
-                                   num_hidden_layers=nlayers,
-                                   hidden_dropout_prob=dropout)
+        encoder_layers_Config = c_bert.ConvBertConfig(
+            hidden_size=ninp,
+            num_attention_heads=nhead,
+            intermediate_size=nhid,
+            conv_kernel_size=convsize,
+            num_hidden_layers=nlayers,
+            hidden_dropout_prob=dropout
+            )
        
-        self.transformer_encoder = cBert.ConvBertLayer(encoder_layers_Config)
+        self.transformer_encoder = c_bert.ConvBertLayer(encoder_layers_Config)
         self.decoder = nn.Linear(ninp, ntoken)
 
         self.init_weights()

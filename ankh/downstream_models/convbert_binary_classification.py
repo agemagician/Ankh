@@ -9,14 +9,17 @@ from functools import partial
 class ConvBertForBinaryClassification(nn.Module):
     def __init__(self, ninp, nhead, nhid, nlayers, convsize=9, dropout=0.5):
         super(ConvBertForBinaryClassification, self).__init__()
+        
         self.model_type = 'Transformer'
 
-        encoder_layers_Config = c_bert.ConvBertConfig(hidden_size=ninp,
-                                   num_attention_heads=nhead,
-                                   intermediate_size=nhid,
-                                   conv_kernel_size=convsize,
-                                   num_hidden_layers=nlayers,
-                                   hidden_dropout_prob=dropout)
+        encoder_layers_Config = c_bert.ConvBertConfig(
+            hidden_size=ninp,
+            num_attention_heads=nhead,
+            intermediate_size=nhid,
+            conv_kernel_size=convsize,
+            num_hidden_layers=nlayers,
+            hidden_dropout_prob=dropout
+            )
        
         self.transformer_encoder = c_bert.ConvBertLayer(encoder_layers_Config)
 

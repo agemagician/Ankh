@@ -10,6 +10,7 @@ from functools import partial
 class ConvBertForRegression(nn.Module):
     def __init__(self, ninp, nhead, nhid, nlayers, convsize=9, dropout=0.5, training_labels_mean=None):
         super(ConvBertForRegression, self).__init__()
+        
         self.model_type = 'Transformer'
         self.training_labels_mean = training_labels_mean
 
