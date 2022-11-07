@@ -7,25 +7,25 @@ from functools import partial
 
 
 class ConvBertForBinaryClassification(nn.Module):
-    def __init__(self, ninp, nhead, nhid, nlayers, convsize=9, dropout=0.5):
+    def __init__(self, input_dim, nhead, hidden_dim, nlayers, convsize=9, dropout=0.5):
         super(ConvBertForBinaryClassification, self).__init__()
-        
-        self.model_type = 'Transformer'
+
+        self.model_type = "Transformer"
 
         encoder_layers_Config = c_bert.ConvBertConfig(
-            hidden_size=ninp,
+            hidden_size=input_dim,
             num_attention_heads=nhead,
-            intermediate_size=nhid,
+            intermediate_size=hidden_dim,
             conv_kernel_size=convsize,
             num_hidden_layers=nlayers,
-            hidden_dropout_prob=dropout
-            )
-       
+            hidden_dropout_prob=dropout,
+        )
+
         self.transformer_encoder = c_bert.ConvBertLayer(encoder_layers_Config)
 
         self.global_max_pooling = partial(torch.max, dim=1)
 
-        self.decoder = nn.Linear(ninp, 1)
+        self.decoder = nn.Linear(input_dim, 1)
         self.init_weights()
 
     def init_weights(self):
@@ -37,15 +37,12 @@ class ConvBertForBinaryClassification(nn.Module):
         hidden_inputs = self.transformer_encoder(embed)[0]
         hidden_inputs, _ = self.global_max_pooling(hidden_inputs)
         logits = self.decoder(hidden_inputs)
-        
+
         if labels is not None:
             loss = F.binary_cross_entropy_with_logits(logits, labels)
         else:
             loss = None
 
         return SequenceClassifierOutput(
-            loss=loss,
-            logits=logits,
-            hidden_states=None,
-            attentions=None
+            loss=loss, logits=logits, hidden_states=None, attentions=None
         )
