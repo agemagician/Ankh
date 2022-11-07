@@ -7,8 +7,19 @@ from functools import partial
 
 
 class ConvBertForBinaryClassification(nn.Module):
-    def __init__(self, input_dim, nhead, hidden_dim, nlayers, convsize=9, dropout=0.5):
+    def __init__(self, input_dim, nhead, hidden_dim, nlayers, convsize=7, dropout=0.2):
         super(ConvBertForBinaryClassification, self).__init__()
+
+        '''
+            ConvBert model for binary classification task.
+            Args:
+                input_dim: the dimension of the input embeddings.
+                nhead: Integer specifying the number of heads for the `ConvBert` model.
+                hidden_dim: Integer specifying the hidden dimension for the `ConvBert` model.
+                nlayers: Integer specifying the number of layers for the `ConvBert` model.
+                convsize: Integer specifying the filter size for the `ConvBert` model. Default: 7
+                dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
+        '''
 
         self.model_type = "Transformer"
 
@@ -23,6 +34,7 @@ class ConvBertForBinaryClassification(nn.Module):
 
         self.transformer_encoder = c_bert.ConvBertLayer(encoder_layers_Config)
 
+        # Max pooling over the timesteps.
         self.global_max_pooling = partial(torch.max, dim=1)
 
         self.decoder = nn.Linear(input_dim, 1)

@@ -6,8 +6,19 @@ import transformers.models.convbert as c_bert
 
 
 class ConvBertForMultiClassClassification(nn.Module):
-    def __init__(self, num_tokens, input_dim, nhead, hidden_dim, nlayers, convsize=9, dropout=0.5):
+    def __init__(self, num_tokens, input_dim, nhead, hidden_dim, nlayers, convsize=7, dropout=0.2):
         super(ConvBertForMultiClassClassification, self).__init__()
+        '''
+            ConvBert model for binary classification task.
+            Args:
+                num_tokens: Integer specifying the number of tokens that should be the output of the final layer.
+                input_dim: the dimension of the input embeddings.
+                nhead: Integer specifying the number of heads for the `ConvBert` model.
+                hidden_dim: Integer specifying the hidden dimension for the `ConvBert` model.
+                nlayers: Integer specifying the number of layers for the `ConvBert` model.
+                convsize: Integer specifying the filter size for the `ConvBert` model. Default: 7
+                dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
+        '''
 
         self.model_type = "Transformer"
         self.num_labels = num_tokens

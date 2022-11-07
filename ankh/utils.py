@@ -4,6 +4,11 @@ import pathlib
 
 class FastaDataset(Dataset):
     def __init__(self, fasta_path):
+        '''
+            A class for loading a FASTA file.
+            Args:
+                fasta_path: String specifying the path of the FASTA file
+        '''
         self.fasta_path = pathlib.Path(fasta_path)
         if not self.fasta_path.exists():
             raise FileNotFoundError(
@@ -29,6 +34,13 @@ class FastaDataset(Dataset):
 
 class CSVDataset(Dataset):
     def __init__(self, dataframe, sequences_column_name, labels_column_name):
+        '''
+            A class for loading a CSV file.
+            Args:
+                dataframe: `DataFrame` instance that contains the sequences and labels.
+                sequences_column_name: String specifying the column name of the sequences.
+                labels_column_name: String specifying the column name of the labels.
+        '''
         self.df = dataframe
         self.seq_col_name = sequences_column_name
         self.label_col_name = labels_column_name

@@ -6,7 +6,7 @@ import torch
 from tqdm.auto import tqdm
 
 
-def create_parser():
+def create_parser() -> argparse.ArgumentParser:
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
         "--model", type=str, help="Whether to use the base model or the large model."
@@ -19,7 +19,7 @@ def create_parser():
     return argparser
 
 
-def validate_output_path(path: pathlib.Path):
+def validate_output_path(path: pathlib.Path) -> None:
     if not path.exists():
         raise FileNotFoundError(f"File not found. Recieved path: {path}")
 

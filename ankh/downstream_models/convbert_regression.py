@@ -13,11 +13,22 @@ class ConvBertForRegression(nn.Module):
         nhead,
         hidden_dim,
         nlayers,
-        convsize=9,
-        dropout=0.5,
+        convsize=7,
+        dropout=0.2,
         training_labels_mean=None,
     ):
         super(ConvBertForRegression, self).__init__()
+        '''
+            ConvBert model for binary classification task.
+            Args:
+                input_dim: the dimension of the input embeddings.
+                nhead: Integer specifying the number of heads for the `ConvBert` model.
+                hidden_dim: Integer specifying the hidden dimension for the `ConvBert` model.
+                nlayers: Integer specifying the number of layers for the `ConvBert` model.
+                convsize: Integer specifying the filter size for the `ConvBert` model. Default: 7
+                dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
+                training_labels_mean: Float specifying the average of the training labels. Useful for faster and better training. Default: None
+        '''
 
         self.model_type = "Transformer"
         self.training_labels_mean = training_labels_mean
