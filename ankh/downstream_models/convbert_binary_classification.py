@@ -10,7 +10,7 @@ class ConvBertForBinaryClassification(nn.Module):
     def __init__(self, input_dim, nhead, hidden_dim, nlayers, convsize=7, dropout=0.2):
         super(ConvBertForBinaryClassification, self).__init__()
 
-        '''
+        """
             ConvBert model for binary classification task.
             Args:
                 input_dim: the dimension of the input embeddings.
@@ -19,7 +19,7 @@ class ConvBertForBinaryClassification(nn.Module):
                 nlayers: Integer specifying the number of layers for the `ConvBert` model.
                 convsize: Integer specifying the filter size for the `ConvBert` model. Default: 7
                 dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
-        '''
+        """
 
         self.model_type = "Transformer"
 

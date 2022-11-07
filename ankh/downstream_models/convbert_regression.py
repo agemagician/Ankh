@@ -18,7 +18,7 @@ class ConvBertForRegression(nn.Module):
         training_labels_mean=None,
     ):
         super(ConvBertForRegression, self).__init__()
-        '''
+        """
             ConvBert model for binary classification task.
             Args:
                 input_dim: the dimension of the input embeddings.
@@ -28,7 +28,7 @@ class ConvBertForRegression(nn.Module):
                 convsize: Integer specifying the filter size for the `ConvBert` model. Default: 7
                 dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
                 training_labels_mean: Float specifying the average of the training labels. Useful for faster and better training. Default: None
-        '''
+        """
 
         self.model_type = "Transformer"
         self.training_labels_mean = training_labels_mean

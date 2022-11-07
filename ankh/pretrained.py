@@ -16,24 +16,24 @@ class AvailableModels(Enum):
 
 
 def get_available_models() -> List:
-    '''
-        Returns a `list` of the current available pretrained models.
-        Args:
-            None
-    '''
+    """
+    Returns a `list` of the current available pretrained models.
+    Args:
+        None
+    """
     return list(available_models.keys())
 
 
 def load_base_model(
     output_attentions: bool = False,
 ) -> Tuple[T5EncoderModel, AutoTokenizer]:
-    
-    '''
-        Downloads and returns the base model and its tokenizer
-        
-        Args:
-            output_attentions: Whether to return the attention tensors when making an inference. Default: False
-    '''
+
+    """
+    Downloads and returns the base model and its tokenizer
+
+    Args:
+        output_attentions: Whether to return the attention tensors when making an inference. Default: False
+    """
 
     tokenizer = AutoTokenizer.from_pretrained(
         available_models["base_model"], use_auth_token=os.environ["huggingface_token"]
@@ -49,14 +49,14 @@ def load_base_model(
 def load_large_model(
     output_attentions: bool = False,
 ) -> Tuple[T5EncoderModel, AutoTokenizer]:
-    
-    '''
-        Downloads and returns the large model and its tokenizer
-        
-        Args:
-            output_attentions: Whether to return the attention tensors when making an inference. Default: False
-    '''
-    
+
+    """
+    Downloads and returns the large model and its tokenizer
+
+    Args:
+        output_attentions: Whether to return the attention tensors when making an inference. Default: False
+    """
+
     tokenizer = AutoTokenizer.from_pretrained(
         available_models["base_model"], use_auth_token=os.environ["huggingface_token"]
     )
@@ -74,14 +74,14 @@ available_models_fns = {"base": load_base_model, "large": load_large_model}
 def load_model(
     model_name: str, output_attentions: bool = False
 ) -> Tuple[T5EncoderModel, AutoTokenizer]:
-    '''
-        Downloads and returns the specified model and its tokenizer
-        
-        Args:
-            model_name: String specifying which model to load.
-                - `base`: Returns the base model and its tokenizer.
-                - `large`: Returns the large model and its tokenizer.
-            output_attentions: Whether to return the attention tensors when making an inference. Default: False
-    '''
+    """
+    Downloads and returns the specified model and its tokenizer
+
+    Args:
+        model_name: String specifying which model to load.
+            - `base`: Returns the base model and its tokenizer.
+            - `large`: Returns the large model and its tokenizer.
+        output_attentions: Whether to return the attention tensors when making an inference. Default: False
+    """
 
     return available_models_fns[model_name](output_attentions=output_attentions)
