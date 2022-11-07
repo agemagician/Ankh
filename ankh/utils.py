@@ -12,7 +12,7 @@ class FastaDataset(Dataset):
             file = ff.readlines()
             
             for f in file:
-                if f.startswith('>'):
+                if not f.startswith('>'):
                     sequence = f.strip()
                     sequence = list(sequence[1:])
                     self.sequences.append(sequence)
