@@ -14,7 +14,7 @@ class FastaDataset(Dataset):
             for f in file:
                 if not f.startswith('>'):
                     sequence = f.strip()
-                    sequence = list(sequence[1:])
+                    sequence = list(sequence)
                     self.sequences.append(sequence)
     
     def __len__(self):
@@ -35,4 +35,3 @@ class CSVDataset(Dataset):
     
     def __getitem__(self, index):
         return list(self.df.iloc[index, self.seq_col_name]), self.df.iloc[index, self.label_col_name]
-
