@@ -20,6 +20,9 @@ def get_available_models() -> List:
     Returns a `list` of the current available pretrained models.
     Args:
         None
+    
+    Returns:
+        List of available models.
     """
     return list(available_models.keys())
 
@@ -33,6 +36,9 @@ def load_base_model(
 
     Args:
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
+    
+    Returns:
+        `T5EncoderModel` and `AutoTokenizer`
     """
 
     tokenizer = AutoTokenizer.from_pretrained(
@@ -55,6 +61,9 @@ def load_large_model(
 
     Args:
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
+    
+    Returns:
+        `T5EncoderModel` and `AutoTokenizer`
     """
 
     tokenizer = AutoTokenizer.from_pretrained(
@@ -82,6 +91,9 @@ def load_model(
             - `base`: Returns the base model and its tokenizer.
             - `large`: Returns the large model and its tokenizer.
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
+    
+    Returns:
+        `T5EncoderModel` and `AutoTokenizer`
     """
 
     return available_models_fns[model_name](output_attentions=output_attentions)

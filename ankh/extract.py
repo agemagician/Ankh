@@ -1,9 +1,10 @@
 import argparse
 import pathlib
-from ankh import pretrained
+from Ankh.ankh.models import ankh_transformers
 from ankh import utils
 import torch
 from tqdm.auto import tqdm
+import numpy as np
 
 
 def create_parser() -> argparse.ArgumentParser:
@@ -25,7 +26,7 @@ def validate_output_path(path: pathlib.Path) -> None:
 
 
 def main(args: argparse.Namespace) -> None:
-    model, tokenizer = pretrained.load_model(args.model)
+    model, tokenizer = ankh_transformers.load_model(args.model)
     fasta_dataset = utils.FastaDataset(args.fasta_path)
     output_path = pathlib.Path(args.output_path)
     validate_output_path(output_path)
@@ -51,8 +52,8 @@ def main(args: argparse.Namespace) -> None:
                 return_tensors="pt",
             )
             embedding = model(input_ids=ids["input_ids"].to(device))[0]
-            current_embeddings = embedding[0].cpu()[shift_left:shift_right]
-            torch.save(current_embeddings, output_path / f"sequence_{idx}")
+            current_embeddings = embedding[0].cpu().numpy()[shift_left:shift_right]
+            np.save(output_path / f"sequence_{idx}", current_embeddings)
 
 
 if __name__ == "__main__":

@@ -1,18 +1,19 @@
-from .pretrained import (
+from .models import (
     get_available_models,
     load_base_model,
     load_large_model,
-    load_model,
+    load_model
 )
+
 from .utils import FastaDataset, CSVDataset
 
-from .downstream_models import (
+from .models import (
     ConvBertForBinaryClassification,
 )
-from .downstream_models import (
+from .models import (
     ConvBertForMultiClassClassification,
 )
-from .downstream_models import ConvBertForRegression
+from .models import ConvBertForRegression
 from typing import Union
 
 

@@ -1,6 +1,11 @@
 from torch.utils.data import Dataset
 import pathlib
 
+try:
+    from Bio import SeqIO as seqio
+except ImportError:
+    seqio = None
+
 
 class FastaDataset(Dataset):
     def __init__(self, fasta_path):
@@ -14,23 +19,18 @@ class FastaDataset(Dataset):
             raise FileNotFoundError(
                 f"Fasta file does not exist. Recieved path: {fasta_path}."
             )
+        
+        if seqio is None:
+            raise ImportError('In order to use `FastaDataset` class you need `biopython` installed. '
+                              'Install it using `pip install biopython`.')
 
-        self.sequences = []
-        with open(self.fasta_path, "r") as ff:
-            file = ff.readlines()
-
-            for f in file:
-                if not f.startswith(">"):
-                    sequence = f.strip()
-                    sequence = list(sequence)
-                    self.sequences.append(sequence)
+        self.sequences = [list(line.seq) for line in seqio.parse(self.fasta_path, 'fasta')]
 
     def __len__(self):
         return len(self.sequences)
 
     def __getitem__(self, index):
         return self.sequences[index]
-
 
 class CSVDataset(Dataset):
     def __init__(self, dataframe, sequences_column_name, labels_column_name):
