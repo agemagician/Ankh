@@ -1,6 +1,6 @@
 import argparse
 import pathlib
-from Ankh.ankh.models import ankh_transformers
+from ankh.models import ankh_transformers
 from ankh import utils
 import torch
 from tqdm.auto import tqdm
@@ -25,16 +25,21 @@ def validate_output_path(path: pathlib.Path) -> None:
         raise FileNotFoundError(f"File not found. Recieved path: {path}")
 
 
+def get_device(use_gpu):
+    if torch.cuda.is_available() and use_gpu:
+        device = torch.device("cuda:0")
+    else:
+        device = torch.device("cpu")
+    
+    return device
+
 def main(args: argparse.Namespace) -> None:
     model, tokenizer = ankh_transformers.load_model(args.model)
     fasta_dataset = utils.FastaDataset(args.fasta_path)
     output_path = pathlib.Path(args.output_path)
     validate_output_path(output_path)
 
-    if torch.cuda.is_available() and args.use_gpu:
-        device = torch.device("cuda:0")
-    else:
-        device = torch.device("cpu")
+    device = get_device(args.use_gpu)
 
     shift_left = 0
     shift_right = -1

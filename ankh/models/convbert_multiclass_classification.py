@@ -7,11 +7,12 @@ import transformers.models.convbert as c_bert
 
 class ConvBertForMultiClassClassification(nn.Module):
     def __init__(
-        self, num_tokens, input_dim, nhead, hidden_dim, nlayers, convsize=7, dropout=0.2
+        self, num_tokens: int, input_dim: int, nhead: int, hidden_dim: int, nlayers: int, convsize: int = 7, dropout: float = 0.2
     ):
         super(ConvBertForMultiClassClassification, self).__init__()
         """
             ConvBert model for binary classification task.
+
             Args:
                 num_tokens: Integer specifying the number of tokens that should be the output of the final layer.
                 input_dim: the dimension of the input embeddings.

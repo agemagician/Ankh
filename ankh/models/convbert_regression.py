@@ -9,17 +9,18 @@ from functools import partial
 class ConvBertForRegression(nn.Module):
     def __init__(
         self,
-        input_dim,
-        nhead,
-        hidden_dim,
-        nlayers,
-        convsize=7,
-        dropout=0.2,
-        training_labels_mean=None,
+        input_dim: int,
+        nhead: int,
+        hidden_dim: int,
+        nlayers: int,
+        convsize: int = 7,
+        dropout: float = 0.2,
+        training_labels_mean: float = None,
     ):
         super(ConvBertForRegression, self).__init__()
         """
             ConvBert model for binary classification task.
+
             Args:
                 input_dim: the dimension of the input embeddings.
                 nhead: Integer specifying the number of heads for the `ConvBert` model.

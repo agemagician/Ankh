@@ -7,11 +7,12 @@ from functools import partial
 
 
 class ConvBertForBinaryClassification(nn.Module):
-    def __init__(self, input_dim, nhead, hidden_dim, nlayers, convsize=7, dropout=0.2):
+    def __init__(self, input_dim: int, nhead: int, hidden_dim: int, nlayers: int, convsize: int = 7, dropout: float = 0.2):
         super(ConvBertForBinaryClassification, self).__init__()
 
         """
             ConvBert model for binary classification task.
+
             Args:
                 input_dim: the dimension of the input embeddings.
                 nhead: Integer specifying the number of heads for the `ConvBert` model.

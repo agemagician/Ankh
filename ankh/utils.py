@@ -8,9 +8,10 @@ except ImportError:
 
 
 class FastaDataset(Dataset):
-    def __init__(self, fasta_path):
+    def __init__(self, fasta_path: str):
         """
         A class for loading a FASTA file.
+
         Args:
             fasta_path: String specifying the path of the FASTA file
         """
@@ -19,12 +20,16 @@ class FastaDataset(Dataset):
             raise FileNotFoundError(
                 f"Fasta file does not exist. Recieved path: {fasta_path}."
             )
-        
-        if seqio is None:
-            raise ImportError('In order to use `FastaDataset` class you need `biopython` installed. '
-                              'Install it using `pip install biopython`.')
 
-        self.sequences = [list(line.seq) for line in seqio.parse(self.fasta_path, 'fasta')]
+        if seqio is None:
+            raise ImportError(
+                "In order to use `FastaDataset` class you need `biopython` installed. "
+                "Install it using `pip install biopython`."
+            )
+
+        self.sequences = [
+            list(line.seq) for line in seqio.parse(self.fasta_path, "fasta")
+        ]
 
     def __len__(self):
         return len(self.sequences)
@@ -32,10 +37,12 @@ class FastaDataset(Dataset):
     def __getitem__(self, index):
         return self.sequences[index]
 
+
 class CSVDataset(Dataset):
     def __init__(self, dataframe, sequences_column_name, labels_column_name):
         """
         A class for loading a CSV file.
+
         Args:
             dataframe: `DataFrame` instance that contains the sequences and labels.
             sequences_column_name: String specifying the column name of the sequences.

@@ -1,9 +1,4 @@
-from .models import (
-    get_available_models,
-    load_base_model,
-    load_large_model,
-    load_model
-)
+from .models import get_available_models, load_base_model, load_large_model, load_model
 
 from .utils import FastaDataset, CSVDataset
 
@@ -36,3 +31,6 @@ def load_downstream_model(
     ConvBertForRegression,
 ]:
     return available_tasks[task]
+
+
+__version__ = "1.0"

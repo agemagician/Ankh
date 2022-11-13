@@ -10,17 +10,13 @@ available_models = {
 }
 
 
-class AvailableModels(Enum):
-    BASE_MODEL = "ElnaggarLab/protx-base-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel768"
-    LARGE_MODEL = "ElnaggarLab/protx-large-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel1536"
-
-
 def get_available_models() -> List:
     """
     Returns a `list` of the current available pretrained models.
+
     Args:
         None
-    
+
     Returns:
         List of available models.
     """
@@ -36,7 +32,7 @@ def load_base_model(
 
     Args:
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
-    
+
     Returns:
         `T5EncoderModel` and `AutoTokenizer`
     """
@@ -61,7 +57,7 @@ def load_large_model(
 
     Args:
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
-    
+
     Returns:
         `T5EncoderModel` and `AutoTokenizer`
     """
@@ -91,7 +87,7 @@ def load_model(
             - `base`: Returns the base model and its tokenizer.
             - `large`: Returns the large model and its tokenizer.
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
-    
+
     Returns:
         `T5EncoderModel` and `AutoTokenizer`
     """
