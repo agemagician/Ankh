@@ -1,4 +1,4 @@
-from transformers import T5EncoderModel, AutoTokenizer
+from transformers import T5EncoderModel, T5ForConditionalGeneration, AutoTokenizer
 from enum import Enum
 import os
 from typing import List, Tuple
@@ -24,6 +24,7 @@ def get_available_models() -> List:
 
 
 def load_base_model(
+    generation: bool = False,
     output_attentions: bool = False,
 ) -> Tuple[T5EncoderModel, AutoTokenizer]:
 
@@ -34,21 +35,30 @@ def load_base_model(
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
 
     Returns:
-        `T5EncoderModel` and `AutoTokenizer`
+        `T5ForConditionalGeneration` if `generation=True` and `T5EncoderModel` otherwise
+        `AutoTokenizer`
     """
 
     tokenizer = AutoTokenizer.from_pretrained(
         available_models["base_model"], use_auth_token=os.environ["huggingface_token"]
     )
-    model = T5EncoderModel.from_pretrained(
-        available_models["base_model"],
-        use_auth_token=os.environ["huggingface_token"],
-        output_attentions=output_attentions,
-    )
+    if generation:
+        model = T5ForConditionalGeneration.from_pretrained(
+            available_models["base_model"],
+            use_auth_token=os.environ["huggingface_token"],
+            output_attentions=output_attentions,
+            )
+    else:
+        model = T5EncoderModel.from_pretrained(
+            available_models["base_model"],
+            use_auth_token=os.environ["huggingface_token"],
+            output_attentions=output_attentions,
+            )
     return model, tokenizer
 
 
 def load_large_model(
+    generation: bool = False,
     output_attentions: bool = False,
 ) -> Tuple[T5EncoderModel, AutoTokenizer]:
 
@@ -59,17 +69,25 @@ def load_large_model(
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
 
     Returns:
-        `T5EncoderModel` and `AutoTokenizer`
+        `T5ForConditionalGeneration` if `generation=True` and `T5EncoderModel` otherwise
+        `AutoTokenizer`
     """
 
     tokenizer = AutoTokenizer.from_pretrained(
         available_models["base_model"], use_auth_token=os.environ["huggingface_token"]
     )
-    model = T5EncoderModel.from_pretrained(
-        available_models["large_model"],
-        use_auth_token=os.environ["huggingface_token"],
-        output_attentions=output_attentions,
-    )
+    if generation:
+        model = T5ForConditionalGeneration.from_pretrained(
+            available_models["base_model"],
+            use_auth_token=os.environ["huggingface_token"],
+            output_attentions=output_attentions,
+            )
+    else:
+        model = T5EncoderModel.from_pretrained(
+            available_models["base_model"],
+            use_auth_token=os.environ["huggingface_token"],
+            output_attentions=output_attentions,
+            )
     return model, tokenizer
 
 
@@ -77,7 +95,7 @@ available_models_fns = {"base": load_base_model, "large": load_large_model}
 
 
 def load_model(
-    model_name: str, output_attentions: bool = False
+    model_name: str, generation: bool = False, output_attentions: bool = False
 ) -> Tuple[T5EncoderModel, AutoTokenizer]:
     """
     Downloads and returns the specified model and its tokenizer
@@ -89,7 +107,8 @@ def load_model(
         output_attentions: Whether to return the attention tensors when making an inference. Default: False
 
     Returns:
-        `T5EncoderModel` and `AutoTokenizer`
+        `T5ForConditionalGeneration` if `generation=True` and `T5EncoderModel` otherwise
+        `AutoTokenizer`
     """
 
-    return available_models_fns[model_name](output_attentions=output_attentions)
+    return available_models_fns[model_name](generation=generation, output_attentions=output_attentions)
