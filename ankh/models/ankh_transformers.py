@@ -3,11 +3,12 @@ from enum import Enum
 import os
 from typing import List, Tuple
 
-# Huggingface pretrained models.
-available_models = {
-    "base_model": "ElnaggarLab/protx-base-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel768",
-    "large_model": "ElnaggarLab/protx-large-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel1536",
-}
+class AvailableModels(Enum):
+    '''
+        Ankh pre-trained model paths.
+    '''
+    ANKH_BASE = "ElnaggarLab/protx-base-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel768"
+    ANKH_LARGE = "ElnaggarLab/protx-large-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel1536"
 
 
 def get_available_models() -> List:
@@ -20,7 +21,7 @@ def get_available_models() -> List:
     Returns:
         List of available models.
     """
-    return list(available_models.keys())
+    return [o.name.lower() for o in AvailableModels]
 
 
 def load_base_model(
@@ -47,18 +48,19 @@ def load_base_model(
                          f'Make sure that `huggingface_token` is set as a global environment variable. '
                          f'This error should be removed when the pre-trained models become public.')
 
+
     tokenizer = AutoTokenizer.from_pretrained(
-        available_models["base_model"], use_auth_token=auth_token
+        AvailableModels.ANKH_BASE.value, use_auth_token=auth_token
     )
     if generation:
         model = T5ForConditionalGeneration.from_pretrained(
-            available_models["base_model"],
+            AvailableModels.ANKH_BASE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
     else:
         model = T5EncoderModel.from_pretrained(
-            available_models["base_model"],
+            AvailableModels.ANKH_BASE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
@@ -90,17 +92,17 @@ def load_large_model(
                          f'This error should be removed when the pre-trained models become public.')
 
     tokenizer = AutoTokenizer.from_pretrained(
-        available_models["base_model"], use_auth_token=auth_token
+        AvailableModels.ANKH_LARGE.value, use_auth_token=auth_token
     )
     if generation:
         model = T5ForConditionalGeneration.from_pretrained(
-            available_models["base_model"],
+            AvailableModels.ANKH_LARGE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
     else:
         model = T5EncoderModel.from_pretrained(
-            available_models["base_model"],
+            AvailableModels.ANKH_LARGE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
