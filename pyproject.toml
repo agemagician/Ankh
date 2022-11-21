@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ankh"
-version = "0.00.6"
+version = "0.00.7"
 description = "Optimized Protein Language Model"
 authors = ["Ahmed Elnaggar <amit.najjar@gmail.com>"]
 license = "CC-BY-NC-SA-4.0"
