@@ -3,9 +3,10 @@ name = "ankh"
 version = "0.00.6"
 description = "Optimized Protein Language Model"
 authors = ["Ahmed Elnaggar <amit.najjar@gmail.com>"]
-license = "GPL-3.0-only"
+license = "CC-BY-NC-SA-4.0"
 readme = "README.md"
 include = [
+    "LICENSE.md",
     "README.md",
 ]
 
