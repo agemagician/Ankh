@@ -4,6 +4,10 @@ version = "0.00.0"
 description = "Optimized Protein Language Model"
 authors = ["Ahmed Elnaggar <amit.najjar@gmail.com>"]
 license = "GPL-3.0-only"
+readme = "README.md"
+include = [
+    "README.md",
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
