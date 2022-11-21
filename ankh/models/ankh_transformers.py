@@ -39,19 +39,27 @@ def load_base_model(
         `AutoTokenizer`
     """
 
+    # Temporary until the pre-trained models become public.
+    auth_token = os.environ.get('huggingface_token', None)
+    
+    if auth_token is None:
+        raise ValueError(f'Currently, The pre-trained models are private. '
+                         f'Make sure that `huggingface_token` is set as a global environment variable. '
+                         f'This error should be removed when the pre-trained models become public.')
+
     tokenizer = AutoTokenizer.from_pretrained(
-        available_models["base_model"], use_auth_token=os.environ["huggingface_token"]
+        available_models["base_model"], use_auth_token=auth_token
     )
     if generation:
         model = T5ForConditionalGeneration.from_pretrained(
             available_models["base_model"],
-            use_auth_token=os.environ["huggingface_token"],
+            use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
     else:
         model = T5EncoderModel.from_pretrained(
             available_models["base_model"],
-            use_auth_token=os.environ["huggingface_token"],
+            use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
     return model, tokenizer
@@ -73,19 +81,27 @@ def load_large_model(
         `AutoTokenizer`
     """
 
+    # Temporary until the pre-trained models become public.
+    auth_token = os.environ.get('huggingface_token', None)
+    
+    if auth_token is None:
+        raise ValueError(f'Currently, The pre-trained models are private. '
+                         f'Make sure that `huggingface_token` is set as a global environment variable. '
+                         f'This error should be removed when the pre-trained models become public.')
+
     tokenizer = AutoTokenizer.from_pretrained(
-        available_models["base_model"], use_auth_token=os.environ["huggingface_token"]
+        available_models["base_model"], use_auth_token=auth_token
     )
     if generation:
         model = T5ForConditionalGeneration.from_pretrained(
             available_models["base_model"],
-            use_auth_token=os.environ["huggingface_token"],
+            use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
     else:
         model = T5EncoderModel.from_pretrained(
             available_models["base_model"],
-            use_auth_token=os.environ["huggingface_token"],
+            use_auth_token=auth_token,
             output_attentions=output_attentions,
             )
     return model, tokenizer
