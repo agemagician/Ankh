@@ -3,10 +3,12 @@ from enum import Enum
 import os
 from typing import List, Tuple
 
+
 class AvailableModels(Enum):
-    '''
-        Ankh pre-trained model paths.
-    '''
+    """
+    Ankh pre-trained model paths.
+    """
+
     ANKH_BASE = "ElnaggarLab/protx-base-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel768"
     ANKH_LARGE = "ElnaggarLab/protx-large-1gspan-partreconstruction-20mlmp-encl48-decl24-ramd128-ranb64-dmodel1536"
 
@@ -41,13 +43,14 @@ def load_base_model(
     """
 
     # Temporary until the pre-trained models become public.
-    auth_token = os.environ.get('huggingface_token', None)
-    
-    if auth_token is None:
-        raise ValueError(f'Currently, The pre-trained models are private. '
-                         f'Make sure that `huggingface_token` is set as a global environment variable. '
-                         f'This error should be removed when the pre-trained models become public.')
+    auth_token = os.environ.get("huggingface_token", None)
 
+    if auth_token is None:
+        raise ValueError(
+            f"Currently, The pre-trained models are private. "
+            f"Make sure that `huggingface_token` is set as a global environment variable. "
+            f"This error should be removed when the pre-trained models become public."
+        )
 
     tokenizer = AutoTokenizer.from_pretrained(
         AvailableModels.ANKH_BASE.value, use_auth_token=auth_token
@@ -57,13 +60,13 @@ def load_base_model(
             AvailableModels.ANKH_BASE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
-            )
+        )
     else:
         model = T5EncoderModel.from_pretrained(
             AvailableModels.ANKH_BASE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
-            )
+        )
     return model, tokenizer
 
 
@@ -84,12 +87,14 @@ def load_large_model(
     """
 
     # Temporary until the pre-trained models become public.
-    auth_token = os.environ.get('huggingface_token', None)
-    
+    auth_token = os.environ.get("huggingface_token", None)
+
     if auth_token is None:
-        raise ValueError(f'Currently, The pre-trained models are private. '
-                         f'Make sure that `huggingface_token` is set as a global environment variable. '
-                         f'This error should be removed when the pre-trained models become public.')
+        raise ValueError(
+            f"Currently, The pre-trained models are private. "
+            f"Make sure that `huggingface_token` is set as a global environment variable. "
+            f"This error should be removed when the pre-trained models become public."
+        )
 
     tokenizer = AutoTokenizer.from_pretrained(
         AvailableModels.ANKH_LARGE.value, use_auth_token=auth_token
@@ -99,13 +104,13 @@ def load_large_model(
             AvailableModels.ANKH_LARGE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
-            )
+        )
     else:
         model = T5EncoderModel.from_pretrained(
             AvailableModels.ANKH_LARGE.value,
             use_auth_token=auth_token,
             output_attentions=output_attentions,
-            )
+        )
     return model, tokenizer
 
 
@@ -129,4 +134,6 @@ def load_model(
         `AutoTokenizer`
     """
 
-    return available_models_fns[model_name](generation=generation, output_attentions=output_attentions)
+    return available_models_fns[model_name](
+        generation=generation, output_attentions=output_attentions
+    )

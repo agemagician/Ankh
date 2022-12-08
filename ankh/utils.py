@@ -6,6 +6,14 @@ try:
 except ImportError:
     seqio = None
 
+import torch
+import numpy as np
+import random
+
+def set_seeds(seed: int = 7):
+    torch.manual_seed(seed)
+    np.random.seed(seed)
+    random.seed(seed)
 
 class FastaDataset(Dataset):
     def __init__(self, fasta_path: str):
@@ -44,7 +52,7 @@ class CSVDataset(Dataset):
         A class for loading a CSV file.
 
         Args:
-            dataframe: `DataFrame` instance that contains the sequences and labels.
+            dataframe: `Dataself.Frame` instance that contains the sequences and labels.
             sequences_column_name: String specifying the column name of the sequences.
             labels_column_name: String specifying the column name of the labels.
         """
