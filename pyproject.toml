@@ -18,8 +18,6 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-
-[tool.poetry.dev-dependencies]
 biopython = "^1.80"
 transformers = "^4.25.1"
 sentencepiece = "^0.1.97"
