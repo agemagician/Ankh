@@ -9,7 +9,7 @@ class GlobalMaxPooling1D(nn.Module):
         """
         Applies global max pooling over timesteps dimension
         """
-        
+
         super().__init__()
         self.global_max_pool1d = partial(torch.max, dim=1)
 

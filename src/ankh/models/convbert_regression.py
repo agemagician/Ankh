@@ -4,22 +4,25 @@ from transformers.modeling_outputs import SequenceClassifierOutput
 from ankh.models import layers
 
 
-class ConvBertForBinaryClassification(layers.BaseModule):
+class ConvBertForRegression(layers.BaseModule):
     def __init__(
         self,
         input_dim: int,
         nhead: int,
         hidden_dim: int,
-        num_hidden_layers: int = 1,
+        num_hidden_layers: int,
         num_layers: int = 1,
         convsize: int = 7,
         dropout: float = 0.2,
         pooling: str = "max",
+        training_labels_mean: float = None,
     ):
         if pooling is None:
-            raise ValueError('`pooling` cannot be `None` in a binary classification task. Expected ["avg", "max"].')
+            raise ValueError(
+                '`pooling` cannot be `None` in a regression task. Expected ["avg", "max"].'
+            )
 
-        super(ConvBertForBinaryClassification, self).__init__(
+        super(ConvBertForRegression, self).__init__(
             input_dim=input_dim,
             nhead=nhead,
             hidden_dim=hidden_dim,
@@ -29,9 +32,8 @@ class ConvBertForBinaryClassification(layers.BaseModule):
             dropout=dropout,
             pooling=pooling,
         )
-
         """
-            ConvBert model for binary classification task.
+            ConvBert model for regression task.
 
             Args:
                 input_dim: Dimension of the input embeddings.
@@ -42,19 +44,24 @@ class ConvBertForBinaryClassification(layers.BaseModule):
                 convsize: Integer specifying the filter size for the `ConvBert` model. Default: 7
                 dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
                 pooling: String specifying the global pooling function. Accepts "avg" or "max". Default: "max"
+                training_labels_mean: Float specifying the average of the training labels. Useful for faster and better training. Default: None
         """
 
+        self.training_labels_mean = training_labels_mean
         self.decoder = nn.Linear(input_dim, 1)
         self.init_weights()
 
     def init_weights(self):
         initrange = 0.1
-        self.decoder.bias.data.zero_()
+        if self.training_labels_mean is not None:
+            self.decoder.bias.data.fill_(self.training_labels_mean)
+        else:
+            self.decoder.bias.data.zero_()
         self.decoder.weight.data.uniform_(-initrange, initrange)
 
     def _compute_loss(self, logits, labels):
         if labels is not None:
-            loss = F.binary_cross_entropy_with_logits(logits, labels)
+            loss = F.mse_loss(logits, labels)
         else:
             loss = None
         return loss
@@ -66,5 +73,8 @@ class ConvBertForBinaryClassification(layers.BaseModule):
         loss = self._compute_loss(logits, labels)
 
         return SequenceClassifierOutput(
-            loss=loss, logits=logits, hidden_states=None, attentions=None
+            loss=loss,
+            logits=logits,
+            hidden_states=None,
+            attentions=None,
         )

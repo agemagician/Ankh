@@ -10,10 +10,12 @@ import torch
 import numpy as np
 import random
 
+
 def set_seeds(seed: int = 7):
     torch.manual_seed(seed)
     np.random.seed(seed)
     random.seed(seed)
+
 
 class FastaDataset(Dataset):
     def __init__(self, fasta_path: str):

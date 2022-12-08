@@ -30,8 +30,9 @@ def get_device(use_gpu):
         device = torch.device("cuda:0")
     else:
         device = torch.device("cpu")
-    
+
     return device
+
 
 def main(args: argparse.Namespace) -> None:
     model, tokenizer = ankh_transformers.load_model(args.model)
