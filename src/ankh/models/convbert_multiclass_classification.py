@@ -22,7 +22,7 @@ class ConvBertForMultiClassClassification(layers.BaseModule):
             hidden_dim=hidden_dim,
             num_hidden_layers=num_hidden_layers,
             num_layers=num_layers,
-            convsize=kernel_size,
+            kernel_size=kernel_size,
             dropout=dropout,
             pooling=None,
         )
