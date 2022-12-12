@@ -67,14 +67,14 @@ Table of Contents
     <td>Ankh Large</td>
     <td>Uniref 50</td>
     <td>placeholder</td>
-    <td>`ankh.load_large_model()`</td>
+    <td>```ankh.load_large_model()```</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Ankh Base</td>
     <td>Uniref 50</td>
     <td>placeholder</td>
-    <td>`ankh.load_base_model()`</td>
+    <td>```ankh.load_base_model()```</td>
     <td>placeholder</td>
   </tr>
 </table>
@@ -92,22 +92,23 @@ Table of Contents
   </tr>
   <tr>
     <td>Secondary Structure Prediction</td>
-    <td>`load_dataset('proteinea/SSP')`</td>
+    <td>```load_dataset('proteinea/SSP')```</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Fluorosence</td>
-    <td>`load_dataset('proteinea/Fluorosence')`</td>
+    <td>```load_dataset('proteinea/Fluorosence')```</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Solubility</td>
-    <td>`load_dataset('proteinea/Solubility')`</td>
+    <td>```load_dataset('proteinea/Solubility')```</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Solubility</td>
-    <td>`load_dataset('proteinea/Solubility')`</td>
+    <td>```load_dataset('proteinea/Solubility')```</td>
     <td>placeholder</td>
   </tr>
 </table>
+
