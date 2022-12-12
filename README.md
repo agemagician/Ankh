@@ -20,7 +20,6 @@ This repository will be updated regulary with **new pre-trained models for prote
 
 Table of Contents
 =================
-* [ ⌛️&nbsp; News](#news)
 * [ ⌛️&nbsp; Models Availability](#models)
 * [ ⌛️&nbsp; Dataset Availability](#datasets)
 * [ 🚀&nbsp; Usage ](#usage)
@@ -42,13 +41,6 @@ Table of Contents
 * [ 💰&nbsp; Sponsors ](#sponsors)
 * [ 📘&nbsp; License ](#license)
 * [ ✏️&nbsp; Citation ](#citation)
-
-
-<a name="news"></a>
-## ⌛️&nbsp; News
-* 2022/11/18: Availability: [LambdaPP](https://embed.predictprotein.org/) offers a simple web-service to access ProtT5-based predictions and UniProt now offers to download [pre-computed ProtT5 embeddings](https://www.uniprot.org/help/embeddings) for a subset of selected organisms. 
-
-
 
 
 
@@ -74,7 +66,7 @@ Table of Contents
     <td>Ankh Base</td>
     <td>Uniref 50</td>
     <td>placeholder</td>
-    <td>```ankh.load_base_model()```</td>
+    <td>```ankh.load_base_model()`</td>
     <td>placeholder</td>
   </tr>
 </table>
@@ -92,22 +84,22 @@ Table of Contents
   </tr>
   <tr>
     <td>Secondary Structure Prediction</td>
-    <td>```load_dataset('proteinea/SSP')```</td>
+    <td>`load_dataset('proteinea/SSP')`</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Fluorosence</td>
-    <td>```load_dataset('proteinea/Fluorosence')```</td>
+    <td>`load_dataset('proteinea/Fluorosence')`</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Solubility</td>
-    <td>```load_dataset('proteinea/Solubility')```</td>
+    <td>`load_dataset('proteinea/Solubility')`</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Solubility</td>
-    <td>```load_dataset('proteinea/Solubility')```</td>
+    <td>`load_dataset('proteinea/Solubility')`</td>
     <td>placeholder</td>
   </tr>
 </table>
