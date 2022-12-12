@@ -59,18 +59,14 @@ Table of Contents
     <td>Ankh Large</td>
     <td>Uniref 50</td>
     <td>placeholder</td>
-    ```python
-    <td>`ankh.load_large_model()`</td>
-    ```
+    <td>```python ankh.load_large_model() ```</td>
     <td>placeholder</td>
   </tr>
   <tr>
     <td>Ankh Base</td>
     <td>Uniref 50</td>
     <td>placeholder</td>
-    ```python
-    <td>`ankh.load_base_model()`</td>
-    ```
+    <td>ankh.load_base_model()</td>
     <td>placeholder</td>
   </tr>
 </table>
