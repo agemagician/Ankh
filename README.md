@@ -166,3 +166,86 @@ regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim
 |Ankh Base                 |      43.21%      |      66.63%      |    13.50%     |    28.65%    |
 |Ankh Large                |      48.93%      |      73.49%      |    16.01%     |    29.91%    |
 
+
+<a name="CP"></a>
+ * <b>&nbsp; Contact Prediction Long Precision Using attention scores:</b><br/>
+ 
+|         Model            | ProteinNet (L/1) | ProteinNet (L/5) | CASP14 (L/1)  | CASP14 (L/5) |
+|--------------------------|:----------------:|:----------------:|:-------------:|:------------:|
+|ProtT5-XL-UniRef50        |      30.85%      |      51.90%      |     8.60%     |    16.09%    |
+|ESM-1b                    |      25.30%      |      42.03%      |     7.77%     |    15.77%    |
+|ESM2-650M                 |      31.87%      |      54.63%      |     10.66%    |    21.01%    |
+|ESM2-3B                   |      33.92%      |      56.63%      |     12.17%    |    21.36%    |
+|ESM2-15B                  |      33.32%      |      57.44%      |     12.25%    |    24.60%    |
+|Ankh Base                 |      25.93%      |      46.28%      |     9.32%     |    19.51%    |
+|Ankh Large                |      31.44%      |      55.58%      |     11.05%    |    20.74%    |
+
+
+<a name="Loc"></a>
+ * <b>&nbsp; Localization (Q10):</b><br/>
+ 
+|         Model            |  DeepLoc Dataset |
+|--------------------------|:----------------:|
+|ProtT5-XL-UniRef50        |      82.95%      |
+|ESM-1b                    |      80.51%      |
+|ESM2-650M                 |      82.08%      |
+|ESM2-3B                   |      81.22%      |
+|ESM2-15B                  |      81.22%      |
+|Ankh Base                 |      81.38%      |
+|Ankh Large                |      83.01%      |
+
+
+<a name="RH"></a>
+ * <b>&nbsp; Remote Homology :</b><br/>
+ 
+|         Model            |   SCOPe (Fold)   |
+|--------------------------|:----------------:|
+|ProtT5-XL-UniRef50        |      59.38%      |
+|ESM-1b                    |      56.93%      |
+|ESM2-650M                 |      51.36%      |
+|ESM2-3B                   |      59.24%      |
+|ESM2-15B                  |      54.48%      |
+|Ankh Base                 |      61.14%      |
+|Ankh Large                |      61.01%      |
+
+
+<a name="Sol"></a>
+ * <b>&nbsp; Solubility :</b><br/>
+ 
+|         Model            |    Solubility    |
+|--------------------------|:----------------:|
+|ProtT5-XL-UniRef50        |      76.26%      |
+|ESM-1b                    |      74.91%      |
+|ESM2-650M                 |      74.56%      |
+|ESM2-3B                   |      74.91%      |
+|ESM2-15B                  |      60.52%      |
+|Ankh Base                 |      76.36%      |
+|Ankh Large                |      76.41%      |
+
+
+<a name="Flu"></a>
+ * <b>&nbsp; Fluorosence (Spearman Correlation) :</b><br/>
+ 
+|         Model            |    Fluorosence   |
+|--------------------------|:----------------:|
+|ProtT5-XL-UniRef50        |        0.61      |
+|ESM-1b                    |        0.48      |
+|ESM2-650M                 |        0.48      |
+|ESM2-3B                   |        0.46      |
+|ESM2-15B                  |        0.56      |
+|Ankh Base                 |        0.62      |
+|Ankh Large                |        0.62      |
+
+
+<a name="CATH"></a>
+ * <b>&nbsp; Nearest Neighbor Search using Global Pooling :</b><br/>
+ 
+|         Model            |   Lookup69K (C)  |   Lookup69K (A)  |   Lookup69K (T)  |   Lookup69K (H)  |
+|--------------------------|:----------------:|:----------------:|:----------------:|:----------------:|
+|ProtT5-XL-UniRef50        |       0.83       |       0.69       |       0.57       |       0.73       |
+|ESM-1b                    |       0.78       |       0.65       |       0.51       |       0.63       |
+|ESM2-650M                 |       0.72       |       0.56       |       0.40       |       0.53       |
+|ESM2-3B                   |       0.79       |       0.65       |       0.53       |       0.64       |
+|ESM2-15B                  |       0.78       |       0.63       |       0.52       |       0.67       |
+|Ankh Base                 |       0.85       |       0.77       |       0.63       |       0.72       |
+|Ankh Large                |       0.83       |       0.72       |       0.60       |       0.70       |
