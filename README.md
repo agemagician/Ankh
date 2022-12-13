@@ -36,11 +36,11 @@ Table of Contents
 * [&nbsp; Requirements ](#requirements)
 * [&nbsp; Team ](#team)
 * [&nbsp; License ](#license)
-* [ ✏️&nbsp; Citation ](#citation)
+* [&nbsp; Citation ](#citation)
 
 
 <a name="models"></a>
-## ⌛️&nbsp; Models Availability
+## &nbsp; Models Availability
 
 |               Model                |              ankh                 |              Hugging Face             |
 |------------------------------------|-----------------------------------|---------------------------------------|
@@ -50,7 +50,7 @@ Table of Contents
 
 <a name="datasets"></a>
 
-## ⌛️&nbsp; Datasets Availability
+## &nbsp; Datasets Availability
 |          Dataset              |                                    HuggingFace                             |  
 | ----------------------------- |----------------------------------------------------------------------------|
 |	Remote Homology       	      |    `load_dataset("proteinea/remote_homology")`                             |
@@ -66,7 +66,7 @@ Table of Contents
 
 
 <a name="usage"></a>
-## 🚀&nbsp; Usage
+## &nbsp; Usage
 
 
 ```python
@@ -75,9 +75,27 @@ import ankh
 
 # To load large model:
 model, tokenizer = ankh.load_large_model()
+model.eval()
+
 
 # To load base model.
 model, tokenizer = ankh.load_base_model()
+model.eval()
+
+
+protein_sequences = ['MKALCLLLLPVLGLLVSSKTLCSMEEAINERIQEVAGSLIFRAISSIGLECQSVTSRGDLATCPRGFAVTGCTCGSACGSWDVRAETTCHCQCAGMDWTGARCCRVQPLEHHHHHH', 'GSHMSLFDFFKNKGSAATATDRLKLILAKERTLNLPYMEEMRKEIIAVIQKYTKSSDIHFKTLDSNQSVETIEVEIILPR']
+
+protein_sequences = [list(seq) for seq in protein_sequences]
+
+
+ids = tokenizer.batch_encode_plus(protein_sequences, 
+                                  add_special_tokens=True, 
+                                  padding=True, 
+                                  is_split_into_words=True, 
+                                  return_tensors="pt")['input_ids']
+with torch.no_grad():
+  embeddings = model(input_ids=ids)
+
 
 # To use downstream model for binary classification:
 binary_classification_model = ankh.ConvBertForBinaryClassification(input_dim=768, 
