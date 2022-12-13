@@ -63,16 +63,16 @@ Table of Contents
 
 * Loading pre-trained models:
   ```python
-    import ankh
+  import ankh
 
-    # To load large model:
-    model, tokenizer = ankh.load_large_model()
-    model.eval()
+  # To load large model:
+  model, tokenizer = ankh.load_large_model()
+  model.eval()
 
 
-    # To load base model.
-    model, tokenizer = ankh.load_base_model()
-    model.eval()
+  # To load base model.
+  model, tokenizer = ankh.load_base_model()
+  model.eval()
   ```
 
 
