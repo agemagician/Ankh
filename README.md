@@ -106,7 +106,7 @@ Table of Contents
                                                                      kernel_size=7, 
                                                                      dropout=0.2, 
                                                                      pooling='max')
-  
+
   # To use downstream model for multiclass classification:
   multiclass_classification_model = ankh.ConvBertForMultiClassClassification(num_tokens=2, 
                                                                              input_dim=768, 
@@ -116,14 +116,14 @@ Table of Contents
                                                                              num_layers=1, 
                                                                              kernel_size=7, 
                                                                              dropout=0.2)
-  
+
   # To use downstream model for regression:
   # training_labels_mean is optional parameter and it's used to fill the output layer's bias with it, 
   # it's useful for faster convergence.
   regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim=384, num_hidden_layers=1, num_layers=1, kernel_size=7, dropout=0, pooling='max', training_labels_mean=0.38145)
 
 ```
-
+```
 
 
 
