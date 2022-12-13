@@ -75,45 +75,52 @@ Table of Contents
   model.eval()
   ```
 
+* Feature extraction using ankh large example:
+  ```python
 
-protein_sequences = ['MKALCLLLLPVLGLLVSSKTLCSMEEAINERIQEVAGSLIFRAISSIGLECQSVTSRGDLATCPRGFAVTGCTCGSACGSWDVRAETTCHCQCAGMDWTGARCCRVQPLEHHHHHH', 'GSHMSLFDFFKNKGSAATATDRLKLILAKERTLNLPYMEEMRKEIIAVIQKYTKSSDIHFKTLDSNQSVETIEVEIILPR']
+  model, tokenizer = ankh.load_large_model()
+  model.eval()
 
-protein_sequences = [list(seq) for seq in protein_sequences]
+  protein_sequences = ['MKALCLLLLPVLGLLVSSKTLCSMEEAINERIQEVAGSLIFRAISSIGLECQSVTSRGDLATCPRGFAVTGCTCGSACGSWDVRAETTCHCQCAGMDWTGARCCRVQPLEHHHHHH', 'GSHMSLFDFFKNKGSAATATDRLKLILAKERTLNLPYMEEMRKEIIAVIQKYTKSSDIHFKTLDSNQSVETIEVEIILPR']
 
-
-ids = tokenizer.batch_encode_plus(protein_sequences, 
-                                  add_special_tokens=True, 
-                                  padding=True, 
-                                  is_split_into_words=True, 
-                                  return_tensors="pt")['input_ids']
-with torch.no_grad():
-  embeddings = model(input_ids=ids)
+  protein_sequences = [list(seq) for seq in protein_sequences]
 
 
-# To use downstream model for binary classification:
-binary_classification_model = ankh.ConvBertForBinaryClassification(input_dim=768, 
-                                                                   nhead=4, 
-                                                                   hidden_dim=384, 
-                                                                   num_hidden_layers=1, 
-                                                                   num_layers=1, 
-                                                                   kernel_size=7, 
-                                                                   dropout=0.2, 
-                                                                   pooling='max')
+  ids = tokenizer.batch_encode_plus(protein_sequences, 
+                                    add_special_tokens=True, 
+                                    padding=True, 
+                                    is_split_into_words=True, 
+                                    return_tensors="pt")['input_ids']
+  with torch.no_grad():
+    embeddings = model(input_ids=ids)
+  ```
 
-# To use downstream model for multiclass classification:
-multiclass_classification_model = ankh.ConvBertForMultiClassClassification(num_tokens=2, 
-                                                                           input_dim=768, 
-                                                                           nhead=4, 
-                                                                           hidden_dim=384, 
-                                                                           num_hidden_layers=1, 
-                                                                           num_layers=1, 
-                                                                           kernel_size=7, 
-                                                                           dropout=0.2)
-
-# To use downstream model for regression:
-# training_labels_mean is optional parameter and it's used to fill the output layer's bias with it, 
-# it's useful for faster convergence.
-regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim=384, num_hidden_layers=1, num_layers=1, kernel_size=7, dropout=0, pooling='max', training_labels_mean=0.38145)
+* Loading downstream models example:
+  ```python
+  # To use downstream model for binary classification:
+  binary_classification_model = ankh.ConvBertForBinaryClassification(input_dim=768, 
+                                                                     nhead=4, 
+                                                                     hidden_dim=384, 
+                                                                     num_hidden_layers=1, 
+                                                                     num_layers=1, 
+                                                                     kernel_size=7, 
+                                                                     dropout=0.2, 
+                                                                     pooling='max')
+  
+  # To use downstream model for multiclass classification:
+  multiclass_classification_model = ankh.ConvBertForMultiClassClassification(num_tokens=2, 
+                                                                             input_dim=768, 
+                                                                             nhead=4, 
+                                                                             hidden_dim=384, 
+                                                                             num_hidden_layers=1, 
+                                                                             num_layers=1, 
+                                                                             kernel_size=7, 
+                                                                             dropout=0.2)
+  
+  # To use downstream model for regression:
+  # training_labels_mean is optional parameter and it's used to fill the output layer's bias with it, 
+  # it's useful for faster convergence.
+  regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim=384, num_hidden_layers=1, num_layers=1, kernel_size=7, dropout=0, pooling='max', training_labels_mean=0.38145)
 
 ```
 
