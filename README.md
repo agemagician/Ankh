@@ -196,7 +196,7 @@ regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim
 
 
 <a name="RH"></a>
- * <b>&nbsp; Remote Homology :</b><br/>
+ * <b>&nbsp; Remote Homology:</b><br/>
  
 |         Model            |   SCOPe (Fold)   |
 |--------------------------|:----------------:|
@@ -210,7 +210,7 @@ regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim
 
 
 <a name="Sol"></a>
- * <b>&nbsp; Solubility :</b><br/>
+ * <b>&nbsp; Solubility:</b><br/>
  
 |         Model            |    Solubility    |
 |--------------------------|:----------------:|
@@ -224,7 +224,7 @@ regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim
 
 
 <a name="Flu"></a>
- * <b>&nbsp; Fluorosence (Spearman Correlation) :</b><br/>
+ * <b>&nbsp; Fluorosence (Spearman Correlation):</b><br/>
  
 |         Model            |    Fluorosence   |
 |--------------------------|:----------------:|
@@ -238,7 +238,7 @@ regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim
 
 
 <a name="CATH"></a>
- * <b>&nbsp; Nearest Neighbor Search using Global Pooling :</b><br/>
+ * <b>&nbsp; Nearest Neighbor Search using Global Pooling:</b><br/>
  
 |         Model            |   Lookup69K (C)  |   Lookup69K (A)  |   Lookup69K (T)  |   Lookup69K (H)  |
 |--------------------------|:----------------:|:----------------:|:----------------:|:----------------:|
