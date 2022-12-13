@@ -20,13 +20,6 @@ Table of Contents
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
 * [&nbsp; Usage ](#usage)
-  * [&nbsp; Feature Extraction (FE)](#feature-extraction)
-  * [&nbsp; Logits extraction](#logits-extraction)
-  * [&nbsp; Fine Tuning (FT)](#fine-tuning)
-  * [&nbsp; Prediction](#prediction)
-  * [&nbsp; Protein Sequences Generation ](#protein-generation)
-  * [&nbsp; Visualization ](#visualization)
-  * [&nbsp; Benchmark ](#benchmark)
 * [&nbsp; Original downstream Predictions  ](#results)
 * [&nbsp; Followup use-cases  ](#inaction)
 * [&nbsp; Comparisons to other tools ](#comparison)
@@ -124,4 +117,52 @@ regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim
 
 ```
 
+
+
+
+<a name="results"></a>
+## &nbsp; Original downstream Predictions 
+
+<a name="q3"></a>
+ * <b>&nbsp; Secondary Structure Prediction (Q3):</b><br/>
+ 
+|         Model            |      CASP12      | CASP14 (HARD) |     TS115     |    CB513     |
+|--------------------------|:----------------:|:-------------:|:-------------:|:------------:|
+|ProtT5-XL-UniRef50        |      83.34%      |     75.09%    |    86.82%     |    86.64%    |
+|ESM-1b                    |      79.45%      |     75.39%    |    85.02%     |    84.31%    |
+|ESM2-650M                 |      82.43%      |     76.97%    |    87.22%     |    87.18%    |
+|ESM2-3B                   |      83.14%      |     76.75%    |    87.50%     |    87.44%    |
+|ESM2-15B                  |      83.16%      |     76.56%    |    87.50%     |    87.35%    |
+|Ankh Base                 |      80.81%      |     76.67%    |    86.92%     |    86.94%    |
+|Ankh Large                |      83.59%      |     77.48%    |    88.22%     |    88.48%    |
+
+
+
+🆕 Predict your sequence live on [predictprotein.org](https://predictprotein.org).
+
+<a name="q8"></a>
+ * <b>&nbsp; Secondary Structure Prediction (Q8):</b><br/>
+ 
+|         Model            |      CASP12      | CASP14 (HARD) |     TS115     |    CB513     |
+|--------------------------|:----------------:|:-------------:|:-------------:|:------------:|
+|ProtT5-XL-UniRef50        |      70.47%      |     59.71%    |    76.91%     |    74.81%    |
+|ESM-1b                    |      66.02%      |     60.34%    |    73.82%     |    71.55%    |
+|ESM2-650M                 |      70.50%      |     62.10%    |    77.68%     |    75.89%    |
+|ESM2-3B                   |      71.69%      |     61.52%    |    77.62%     |    75.95%    |
+|ESM2-15B                  |      71.17%      |     61.81%    |    77.67%     |    75.88%    |
+|Ankh Base                 |      68.85%      |     62.33%    |    77.08%     |    75.83%    |
+|Ankh Large                |      71.69%      |     63.17%    |    79.10%     |    78.45%    |
+
+<a name="CP"></a>
+ * <b>&nbsp; Contact Prediction Long Precision Using Embeddings:</b><br/>
+ 
+|         Model            | ProteinNet (L/1) | ProteinNet (L/5) | CASP14 (L/1)  | CASP14 (L/5) |
+|--------------------------|:----------------:|:----------------:|:-------------:|:------------:|
+|ProtT5-XL-UniRef50        |      44.74%      |      68.95%      |    11.95%     |    24.45%    |
+|ESM-1b                    |      29.25%      |      50.69%      |    10.18%     |    18.08%    |
+|ESM2-650M                 |      29.36%      |      50.74%      |    13.71%     |    22.25%    |
+|ESM2-3B                   |      30.24%      |      51.34%      |    12.20%     |    21.91%    |
+|ESM2-15B                  |      31.62%      |      52.97%      |    14.44%     |    26.61%    |
+|Ankh Base                 |      43.21%      |      66.63%      |    13.50%     |    28.65%    |
+|Ankh Large                |      48.93%      |      73.49%      |    16.01%     |    29.91%    |
 
