@@ -137,9 +137,6 @@ regression_model = ankh.ConvBertForRegression(input_dim=768, nhead=4, hidden_dim
 |Ankh Large                |      83.59%      |     77.48%    |    88.22%     |    88.48%    |
 
 
-
-🆕 Predict your sequence live on [predictprotein.org](https://predictprotein.org).
-
 <a name="q8"></a>
  * <b>&nbsp; Secondary Structure Prediction (Q8):</b><br/>
  
