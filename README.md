@@ -38,9 +38,8 @@ Table of Contents
 * [&nbsp; Community and Contributions ](#community)
 * [&nbsp; Have a question? ](#question)
 * [&nbsp; Found a bug? ](#bug)
-* [&nbsp; Requirements ](#requirements)
 * [&nbsp; Team ](#team)
-* [&nbsp; License ](#license)
+* [&nbsp; License ](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
 * [&nbsp; Citation ](#citation)
 
 
