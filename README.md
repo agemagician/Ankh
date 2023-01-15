@@ -4,7 +4,6 @@
 
 [Ankh](https://github.com/agemagician/Ankh/) is the first general-purpose protein language model trained on Google’s **TPU-v4** surpassing the state-of-the-art performance with dramatically less parameters, changing the landscape of protein engineering with AI forever.
 
-Have a look at our [paper] (paperlink) for more details on the model. 
 <br/>
 
 
