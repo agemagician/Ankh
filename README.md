@@ -9,7 +9,6 @@
 Have a look at our paper [Placeholder](paperlink) for more information about our work. 
 
 
-
 ### Abstract
 
 Neglecting the limits of up-scaling protein Language Models (pLMs), we sought the limits of performance and optimization.
@@ -30,7 +29,6 @@ This repository will be updated regulary with **new pre-trained models for prote
 
 Table of Contents
 =================
-* [&nbsp; News](#news)
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
 * [&nbsp; Usage ](#usage)
@@ -49,10 +47,10 @@ Table of Contents
 <a name="models"></a>
 ## &nbsp; Models Availability
 
-|               Model                |              ankh                 |              Hugging Face             |
-|------------------------------------|-----------------------------------|---------------------------------------|
-|             Ankh Large             |     `ankh.load_large_model()`     |          [Download](placeholder)      | 
-|             Ankh Base              |     `ankh.load_base_model()`      |          [Download](placeholder)      |
+|               Model                |              ankh                 |              Hugging Face                                 |
+|------------------------------------|-----------------------------------|-----------------------------------------------------------|
+|             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-large)| 
+|             Ankh Base              |     `ankh.load_base_model()`      |[Ankh Base](https://huggingface.co/ElnaggarLab/ankh-base)  |
 
 
 <a name="datasets"></a>
