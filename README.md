@@ -14,17 +14,19 @@ Table of Contents
 =================
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
-* [&nbsp; Usage ](#usage)
-* [&nbsp; Original downstream Predictions  ](#results)
-* [&nbsp; Followup use-cases  ](#inaction)
-* [&nbsp; Comparisons to other tools ](#comparison)
-* [&nbsp; Community and Contributions ](#community)
-* [&nbsp; Have a question? ](#question)
-* [&nbsp; Found a bug? ](#bug)
-* [&nbsp; Requirements ](#requirements)
-* [&nbsp; Team ](#team)
-* [&nbsp; License ](#license)
-* [&nbsp; Citation ](#citation)
+* [&nbsp; Usage](#usage)
+* [&nbsp; Original downstream Predictions](#results)
+* [&nbsp; Followup use-cases](#inaction)
+* [&nbsp; Comparisons to other tools](#comparison)
+* [&nbsp; Community and Contributions](#community)
+* [&nbsp; Have a question?](#question)
+* [&nbsp; Found a bug?](#bug)
+* [&nbsp; Requirements](#requirements)
+* [&nbsp; Sponsors](#sponsors)
+* [&nbsp; Team](#team)
+* [&nbsp; License](#license)
+* [&nbsp; Citation](#citation)
+
 
 
 <a name="models"></a>
