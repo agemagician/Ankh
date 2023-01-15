@@ -49,9 +49,9 @@ Table of Contents
 |	CB513			                    |    `load_dataset("proteinea/SSP", data_files={'test': ['CB513.csv']})`     |
 |	TS115			                    |    `load_dataset("proteinea/SSP", data_files={'test': ['TS115.csv']})`     |
 |	DeepLoc		                    |    `load_dataset("proteinea/deeploc")`                                     |
-|   Fluorosence                 |    `load_dataset("proteinea/flourosence")`                                 |
-|   Solubility                  |    `load_dataset("proteinea/solubility")`                                  |
-|   Nearest Neighbor Search     |    `load_dataset("proteinea/nearest_neighbor_search")`                     |
+| Fluorosence                   |    `load_dataset("proteinea/flourosence")`                                 |
+| Solubility                    |    `load_dataset("proteinea/solubility")`                                  |
+| Nearest Neighbor Search       |    `load_dataset("proteinea/nearest_neighbor_search")`                     |
 
 
 
@@ -268,5 +268,5 @@ Table of Contents
 2. [Hazem Essam](https://github.com/hazemessamm) 
 3. [Wafaa Ashraf](https://github.com/wafaaashraf) 
 4. [Walid Moustafa](https://github.com/wmustafaawad) 
-5. [Walid Moustafa](https://github.com/melkerdawy) 
+5. [Mohamed Elkerdawy](https://github.com/melkerdawy) 
 6. [Charlotte Rochereau](https://github.com/crochereau)
