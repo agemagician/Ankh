@@ -59,7 +59,7 @@ Table of Contents
 ## &nbsp; Usage
 
 * Loading pre-trained models:
-  ```python
+```python
   import ankh
 
   # To load large model:
@@ -70,10 +70,10 @@ Table of Contents
   # To load base model.
   model, tokenizer = ankh.load_base_model()
   model.eval()
-  ```
+```
 
 * Feature extraction using ankh large example:
-  ```python
+```python
 
   model, tokenizer = ankh.load_large_model()
   model.eval()
@@ -91,10 +91,10 @@ Table of Contents
                                     return_tensors="pt")['input_ids']
   with torch.no_grad():
     embeddings = model(input_ids=ids)
-  ```
+```
 
 * Loading downstream models example:
-  ```python
+```python
   # To use downstream model for binary classification:
   binary_classification_model = ankh.ConvBertForBinaryClassification(input_dim=768, 
                                                                      nhead=4, 
