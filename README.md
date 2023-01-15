@@ -10,6 +10,20 @@ Have a look at our paper [Placeholder](paperlink) for more information about our
 
 
 
+### Abstract
+
+Neglecting the limits of up-scaling protein Language Models (pLMs), we sought the limits of performance and optimization.
+Although the proportionality between the model size and the richness of its learned representations is validated, we
+prioritize accessibility and pursue a path of data-efficient, cost-reduced, and knowledge-guided optimization. Through
+over twenty experiments traversing masking, architecture, and pre-training data, we derive insights from protein-specific
+experimentation into building a model that interprets the language of life, optimally. This model, Ankh, is the first
+general-purpose pLM trained on Google’s TPU-v4 surpassing the state-of-the-art performance with fewer parameters
+(<10% for pre-training, <7% for inference, and <30% for the embedding dimension). Ankh excelled on a representative
+variety of protein structure and function prediction tasks. We further provide a generation analysis on High-N and
+One-N scales where Ankh succeeds in learning evolutionary conservation-mutation trends and introducing diversity while
+retaining key structural- functional characteristics. We dedicate our work to promoting accessibility to research innovation
+via attainable resources.
+
 
 This repository will be updated regulary with **new pre-trained models for proteins** as part of supporting **bioinformatics** community in general.
 
