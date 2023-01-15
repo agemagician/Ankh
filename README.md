@@ -1,13 +1,13 @@
 <br/>
-<h1 align="center">Ankh ☥: Optimized Protein Language Model</h1>
+<h1 align="center">Ankh: Optimized Protein Language Model</h1>
 <br/>
 
-[Ankh](https://github.com/agemagician/Ankh/) is the first general-purpose protein language model trained on Google’s **TPU-v4** surpassing the state-of-the-art performance with dramatically less parameters, changing the landscape of protein engineering with AI forever.
-
 <br/>
 
+[Ankh PLM](https://github.com/agemagician/Ankh/) is providing **state of the art pre-trained models for proteins**. Ankh was trained on **TPU-V4**.
 
-This repository will be updated regulary with **new pre-trained models for proteins** as means of supporting the **biotech** community in revolutionizing the landscape of protein engineering.
+
+This repository will be updated regulary with **new pre-trained models for proteins** as part of supporting **bioinformatics** community in general.
 
 
 Table of Contents
@@ -15,24 +15,25 @@ Table of Contents
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
 * [&nbsp; Usage ](#usage)
-* [&nbsp; Original Downstream Predictions  ](#results)
-* [&nbsp; Follow-up Usecases  ](#inaction)
-* [&nbsp; Comparisons to Other Tools ](#comparison)
+* [&nbsp; Original downstream Predictions  ](#results)
+* [&nbsp; Followup use-cases  ](#inaction)
+* [&nbsp; Comparisons to other tools ](#comparison)
 * [&nbsp; Community and Contributions ](#community)
-* [&nbsp; Have a Question? ](#question)
-* [&nbsp; Found a Bug? ](#bug)
-* [&nbsp; Team](#team)
-* [&nbsp; License](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
-* [&nbsp; Citation](#citation)
+* [&nbsp; Have a question? ](#question)
+* [&nbsp; Found a bug? ](#bug)
+* [&nbsp; Requirements ](#requirements)
+* [&nbsp; Team ](#team)
+* [&nbsp; License ](#license)
+* [&nbsp; Citation ](#citation)
 
 
 <a name="models"></a>
 ## &nbsp; Models Availability
 
-|               Model                |              ankh                 |              Hugging Face                                 |
-|------------------------------------|-----------------------------------|-----------------------------------------------------------|
-|             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-large)| 
-|             Ankh Base              |     `ankh.load_base_model()`      |[Ankh Base](https://huggingface.co/ElnaggarLab/ankh-base)  |
+|               Model                |              ankh                 |              Hugging Face             |
+|------------------------------------|-----------------------------------|---------------------------------------|
+|             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-base)| 
+|             Ankh Base              |     `ankh.load_base_model()`      |          [Download](placeholder)      |
 
 
 <a name="datasets"></a>
@@ -258,8 +259,12 @@ Table of Contents
 |ESM-1b                    |       0.78       |       0.65       |       0.51       |       0.63       |
 
 
+
 <a name="team"></a>
 ## &nbsp; Team
-1. [Ahmed Elnaggar](https://github.com/agemagician)
-2. [Hazem Essam](https://github.com/hazemessamm)
-3. [Walid Moustafa](https://github.com/wmustafaawad)
+1. [Ahmed Elnaggar](https://github.com/agemagician) 
+2. [Hazem Essam](https://github.com/hazemessamm) 
+3. [Wafaa Ashraf](https://github.com/wafaaashraf) 
+4. [Walid Moustafa](https://github.com/wmustafaawad) 
+5. [Walid Moustafa](https://github.com/melkerdawy) 
+6. [Charlotte Rochereau](https://github.com/crochereau)
