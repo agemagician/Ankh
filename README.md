@@ -21,9 +21,9 @@ Table of Contents
 * [&nbsp; Community and Contributions ](#community)
 * [&nbsp; Have a Question? ](#question)
 * [&nbsp; Found a Bug? ](#bug)
-* [&nbsp; Team ](#team)
-* [&nbsp; License ](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
-* [&nbsp; Citation ](#citation)
+* [&nbsp; Team](#team)
+* [&nbsp; License](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
+* [&nbsp; Citation](#citation)
 
 
 <a name="models"></a>
@@ -256,3 +256,9 @@ Table of Contents
 |ESM2-3B                   |       0.79       |       0.65       |       0.53       |       0.64       |
 |ESM2-650M                 |       0.72       |       0.56       |       0.40       |       0.53       |
 |ESM-1b                    |       0.78       |       0.65       |       0.51       |       0.63       |
+
+
+<a name="team"></a>
+1. [Ahmed Elnaggar](https://github.com/agemagician)
+2. [Hazem Essam](https://github.com/hazemessamm)
+3. [Walid Moustafa](https://github.com/wmustafaawad)
