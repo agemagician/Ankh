@@ -6,21 +6,9 @@
 [Ankh](https://github.com/agemagician/Ankh/) is the first general-purpose protein language model trained on Google’s **TPU-v4** surpassing state-of-the-art per-formance with dramatically less parameters, changing the landscape of protein engineering with AI forever.
 
 Have a look at our [paper] (paperlink) for more details on the model. 
+<br/>
 
 
-### Abstract
-
-Neglecting the limits of up-scaling protein Language Models (pLMs), we sought the limits of performance and optimization.
-Although the proportionality between the model size and the richness of its learned representations is validated, we
-prioritize accessibility and pursue a path of data-efficient, cost-reduced, and knowledge-guided optimization. Through
-over twenty experiments traversing masking, architecture, and pre-training data, we derive insights from protein-specific
-experimentation into building a model that interprets the language of life, optimally. This model, Ankh, is the first
-general-purpose pLM trained on Google’s TPU-v4 surpassing the state-of-the-art performance with fewer parameters
-(<10% for pre-training, <7% for inference, and <30% for the embedding dimension). Ankh excelled on a representative
-variety of protein structure and function prediction tasks. We further provide a generation analysis on High-N and
-One-N scales where Ankh succeeds in learning evolutionary conservation-mutation trends and introducing diversity while
-retaining key structural- functional characteristics. We dedicate our work to promoting accessibility to research innovation
-via attainable resources.
 
 
 This repository will be updated regulary with **new pre-trained models for proteins** as part of supporting **bioinformatics** community in general.
@@ -31,12 +19,12 @@ Table of Contents
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
 * [&nbsp; Usage ](#usage)
-* [&nbsp; Original downstream Predictions  ](#results)
-* [&nbsp; Followup use-cases  ](#inaction)
-* [&nbsp; Comparisons to other tools ](#comparison)
+* [&nbsp; Original Downstream Predictions  ](#results)
+* [&nbsp; Follow-up Usecases  ](#inaction)
+* [&nbsp; Comparisons to Other Tools ](#comparison)
 * [&nbsp; Community and Contributions ](#community)
-* [&nbsp; Have a question? ](#question)
-* [&nbsp; Found a bug? ](#bug)
+* [&nbsp; Have a Question? ](#question)
+* [&nbsp; Found a Bug? ](#bug)
 * [&nbsp; Team ](#team)
 * [&nbsp; License ](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
 * [&nbsp; Citation ](#citation)
