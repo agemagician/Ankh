@@ -3,10 +3,9 @@
 <br/>
 
 <br/>
+[Ankh](https://github.com/agemagician/Ankh/) is the first general-purpose protein language model trained on Google’s **TPU-v4** surpassing state-of-the-art per-formance with dramatically less parameters, changing the landscape of protein engineering with AI forever.
 
-[Ankh PLM](https://github.com/agemagician/Ankh/) is providing **state of the art pre-trained models for proteins**. Ankh was trained on **TPU-V4**.
-
-Have a look at our paper [Placeholder](paperlink) for more information about our work. 
+Have a look at our paper [Placeholder](paperlink) for more details on the model. 
 
 
 ### Abstract
@@ -31,9 +30,16 @@ Table of Contents
 =================
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
-* [&nbsp; Usage](#usage)
-* [&nbsp; Original downstream Predictions](#results)
-* [&nbsp; License](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
+* [&nbsp; Usage ](#usage)
+* [&nbsp; Original downstream Predictions  ](#results)
+* [&nbsp; Followup use-cases  ](#inaction)
+* [&nbsp; Comparisons to other tools ](#comparison)
+* [&nbsp; Community and Contributions ](#community)
+* [&nbsp; Have a question? ](#question)
+* [&nbsp; Found a bug? ](#bug)
+* [&nbsp; Team ](#team)
+* [&nbsp; License ](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
+* [&nbsp; Citation ](#citation)
 
 
 <a name="models"></a>
