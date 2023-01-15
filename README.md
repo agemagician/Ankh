@@ -31,16 +31,9 @@ Table of Contents
 =================
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
-* [&nbsp; Usage ](#usage)
-* [&nbsp; Original downstream Predictions  ](#results)
-* [&nbsp; Followup use-cases  ](#inaction)
-* [&nbsp; Comparisons to other tools ](#comparison)
-* [&nbsp; Community and Contributions ](#community)
-* [&nbsp; Have a question? ](#question)
-* [&nbsp; Found a bug? ](#bug)
-* [&nbsp; Team ](#team)
-* [&nbsp; License ](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
-* [&nbsp; Citation ](#citation)
+* [&nbsp; Usage](#usage)
+* [&nbsp; Original downstream Predictions](#results)
+* [&nbsp; License](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
 
 
 <a name="models"></a>
