@@ -260,14 +260,10 @@ Table of Contents
 
 <a name="team"></a>
 ## &nbsp; Team
-1. [Ahmed Elnaggar](https://github.com/agemagician) 
-2. [Hazem Essam](https://github.com/hazemessamm) 
-3. [Wafaa Ashraf](https://github.com/wafaaashraf) 
-4. [Walid Moustafa](https://github.com/wmustafaawad) 
-5. [Mohamed Elkerdawy](https://github.com/melkerdawy) 
-6. [Charlotte Rochereau](https://github.com/crochereau)
 
-
+| [Ahmed Elnaggar](https://github.com/agemagician) | [Hazem Essam](https://github.com/hazemessamm) | [Wafaa Ashraf](https://github.com/wafaaashraf) | [Walid Moustafa](https://github.com/wmustafaawad) | [Mohamed Elkerdawy](https://github.com/melkerdawy) | [Charlotte Rochereau](https://github.com/crochereau) | Burkhard Rost |
+|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/AhmedElNaggar.jpg?raw=true"> | <img width=120/ src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/HazemEssam.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WafaaAshraf.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WalidMoustafa.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/MohamedElKerdawy.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/Rost.jpg?raw=true"> |
 
 
 
@@ -282,10 +278,6 @@ Feel free to **file a new issue** with a respective title and description on the
 <a name="sponsors"></a>
 ## &nbsp; Sponsors
 
-
-<!-- |    Google Cloud     |         Proteinea         |
-:-------------------------:|:-------------------------:|
-![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/google-cloud-logo.jpg?raw=true) | ![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea-square-logo.png?raw=true) | -->
 
 |       Google Cloud       |         Proteinea         |
 :-------------------------:|:-------------------------:|
