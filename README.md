@@ -263,10 +263,22 @@ Table of Contents
 <a name="team"></a>
 ## &nbsp; Team
 
-| [Ahmed Elnaggar](https://github.com/agemagician) | [Hazem Essam](https://github.com/hazemessamm) | [Wafaa Ashraf](https://github.com/wafaaashraf) | [Walid Moustafa](https://github.com/wmustafaawad) | [Mohamed Elkerdawy](https://github.com/melkerdawy) | [Charlotte Rochereau](https://github.com/crochereau) | Burkhard Rost |
-|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
-| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/AhmedElNaggar.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/HazemEssam.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WafaaAshraf.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WalidMoustafa.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/MohamedElKerdawy.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/CharlotteRochereau.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/Rost.jpg?raw=true"> |
+* <b>Technical University of Munich:</b><br/>
+| [Ahmed Elnaggar](https://github.com/agemagician) |  Burkhard Rost |
+|:-------------------------:|:-------------------------:|
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/AhmedElNaggar.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/Rost.jpg?raw=true"> |
 
+
+* <b>Proteinea:</b><br/>
+| [Hazem Essam](https://github.com/hazemessamm) | [Wafaa Ashraf](https://github.com/wafaaashraf) | [Walid Moustafa](https://github.com/wmustafaawad) | [Mohamed Elkerdawy](https://github.com/melkerdawy) |
+|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/HazemEssam.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WafaaAshraf.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WalidMoustafa.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/MohamedElKerdawy.jpeg?raw=true"> |
+
+
+* <b>University of Columbia:</b><br/>
+| [Charlotte Rochereau](https://github.com/crochereau) |
+|:-------------------------:|
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/CharlotteRochereau.jpg?raw=true"> |
 
 
 <a name="sponsors"></a>
