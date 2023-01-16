@@ -42,17 +42,17 @@ Table of Contents
 <a name="datasets"></a>
 
 ## &nbsp; Datasets Availability
-|          Dataset              |                                    HuggingFace                             |  
-| ----------------------------- |----------------------------------------------------------------------------|
-|	Remote Homology       	      |    `load_dataset("proteinea/remote_homology")`                             |
-|	CASP12			                  |    `load_dataset("proteinea/SSP", data_files={'test': ['CASP12.csv']})`    |
-|	CASP14			                  |    `load_dataset("proteinea/SSP", data_files={'test': ['CASP14.csv']})`    |
-|	CB513			                    |    `load_dataset("proteinea/SSP", data_files={'test': ['CB513.csv']})`     |
-|	TS115			                    |    `load_dataset("proteinea/SSP", data_files={'test': ['TS115.csv']})`     |
-|	DeepLoc		                    |    `load_dataset("proteinea/deeploc")`                                     |
-| Fluorosence                   |    `load_dataset("proteinea/flourosence")`                                 |
-| Solubility                    |    `load_dataset("proteinea/solubility")`                                  |
-| Nearest Neighbor Search       |    `load_dataset("proteinea/nearest_neighbor_search")`                     |
+|            Dataset            |                                            HuggingFace                                            |  
+| ----------------------------- |---------------------------------------------------------------------------------------------------|
+|	Remote Homology       	      |    `load_dataset("proteinea/remote_homology")`                                                    |
+|	CASP12			                  |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['CASP12.csv']})`|
+|	CASP14			                  |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['CASP14.csv']})`|
+|	CB513			                    |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['CB513.csv']})` |
+|	TS115			                    |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['TS115.csv']})` |
+|	DeepLoc		                    |    `load_dataset("proteinea/deeploc")`                                                            |
+| Fluorosence                   |    `load_dataset("proteinea/flourosence")`                                                        |
+| Solubility                    |    `load_dataset("proteinea/solubility")`                                                         |
+| Nearest Neighbor Search       |    `load_dataset("proteinea/nearest_neighbor_search")`                                            |
 
 
 
