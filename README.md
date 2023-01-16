@@ -8,7 +8,7 @@
 
 <div><img width=700 height=500 align="right" src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/logo.jpeg?raw=true"></div>
 
-This repository will be updated regulary with **new pre-trained models for proteins** in part of supporting the **biotech** community in revolutinizing protein engineering using AI.
+<div>This repository will be updated regulary with **new pre-trained models for proteins** in part of supporting the **biotech** community in revolutinizing protein engineering using AI.</div>
 
 
 Table of Contents
