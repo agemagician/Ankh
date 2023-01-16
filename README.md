@@ -25,7 +25,7 @@ Table of Contents
 * [&nbsp; Requirements](#requirements)
 * [&nbsp; Sponsors](#sponsors)
 * [&nbsp; Team](#team)
-* [&nbsp; License](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
+* [&nbsp; License](#license)
 * [&nbsp; Citation](#citation)
 
 
@@ -292,6 +292,11 @@ Table of Contents
 :------------------------------------------------------------------------------------------------------------------------:|
 <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/google_cloud_logo.jpg?raw=true"> |
 
+
+
+<a name="license"></a>
+## &nbsp; License
+Ankh pretrained models are released under the under terms of the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by/4.0/).
 
 <a name="community"></a>
 ## &nbsp; Community and Contributions
