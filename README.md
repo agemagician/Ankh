@@ -273,9 +273,9 @@ Table of Contents
 ## &nbsp; Sponsors
 
 
-|       Google Cloud       |         Proteinea         |
-:-------------------------:|:-------------------------:|
-<img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/google_cloud_logo.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea_logo.jpg?raw=true"> |
+|                                                    Google Cloud                                                         |
+:------------------------------------------------------------------------------------------------------------------------:|
+<img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/google_cloud_logo.jpg?raw=true"> |
 
 
 <a name="community"></a>
@@ -286,7 +286,7 @@ The ProtTrans project is a **open source project** supported by various partner 
 <a name="question"></a>
 ## &nbsp; Have a question?
 
-We are happy to hear your question in our issues page [Ankh](https://github.com/agemagician/Ankh/issues)! Obviously if you have a private question or want to cooperate with us, you can always **reach out to us directly** via our [Ahmed Elnaggar email](mailto:amit.najjar@gmail.com?subject=[GitHub]Ankh) 
+We are happy to hear your question in our issues page [Ankh](https://github.com/agemagician/Ankh/issues)! Obviously if you have a private question or want to cooperate with us, you can always **reach out to us directly** via our [Mohamed ElKerdawy email](mailto:elkerdawy@proteinea.com?subject=[GitHub]Ankh) or [Wafaa Ashraf email](mailto:wafaa@proteinea.com?subject=[GitHub]Ankh) 
 
 <a name="bug"></a>
 ## &nbsp; Found a bug?
