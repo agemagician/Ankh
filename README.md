@@ -312,4 +312,4 @@ We are happy to hear your question in our issues page [Ankh](https://github.com/
 <a name="bug"></a>
 ## &nbsp; Found a bug?
 
-Feel free to **file a new issue** with a respective title and description on the the [Ankh](https://github.com/agemagician/Ankh/issues) repository. If you already found a solution to your problem, **we would love to review your pull request**!.
+Feel free to **file a new issue** with a respective title and description on the the [Ankh] (https://github.com/agemagician/Ankh/issues) repository. If you already found a solution to your problem, **we would love to review your pull request**!.
