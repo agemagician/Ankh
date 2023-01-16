@@ -1,5 +1,6 @@
 <br/>
-<h1 align="center">Ankh ☥: Optimized Protein Language Model</h1>
+
+<h1 align="center">Ankh ☥: Optimized Protein Language Model Unlocks General-Purpose Modelling </h1>
 <br/>
 
 <br/>
