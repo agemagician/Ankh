@@ -7,7 +7,7 @@
 
 [Ankh](https://github.com/agemagician/Ankh/) is the first general-purpose protein language model trained on Google's **TPU-V4** surpassing the state-of-the-art performance with dramatically less parameters, promoting accessibility to research innovation via attainable resources.
 
-<div align="center"><img width=700 height=500 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/logo.jpeg?raw=true"></div>
+<div align="center"><img width=700 height=500 src="https://github.com/agemagician/Ankh/blob/main/images/logo.jpeg?raw=true"></div>
 
 This repository will be updated regulary with **new pre-trained models for proteins** in part of supporting the **biotech** community in revolutinizing protein engineering using AI.
 
@@ -268,21 +268,21 @@ Table of Contents
 
 | [Ahmed Elnaggar](https://github.com/agemagician) |       Burkhard Rost       |
 |:------------------------------------------------:|:-------------------------:|
-| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/AhmedElNaggar.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/Rost.jpg?raw=true"> |
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/AhmedElNaggar.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/Rost.jpg?raw=true"> |
 
 
 * <b>Proteinea:</b><br/>
 
 | [Hazem Essam](https://github.com/hazemessamm) | [Wafaa Ashraf](https://github.com/wafaaashraf) | [Walid Moustafa](https://github.com/wmustafaawad) | [Mohamed Elkerdawy](https://github.com/melkerdawy) |
 |:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
-| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/HazemEssam.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WafaaAshraf.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/WalidMoustafa.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/MohamedElKerdawy.jpeg?raw=true"> |
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/HazemEssam.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/WafaaAshraf.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/WalidMoustafa.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/MohamedElKerdawy.jpeg?raw=true"> |
 
 
 * <b>University of Columbia:</b><br/>
 
 | [Charlotte Rochereau](https://github.com/crochereau) |
 |:----------------------------------------------------:|
-| <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/CharlotteRochereau.jpg?raw=true"> |
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/CharlotteRochereau.jpg?raw=true"> |
 
 
 <a name="sponsors"></a>
@@ -291,7 +291,7 @@ Table of Contents
 
 |                                                    Google Cloud                                                         |
 :------------------------------------------------------------------------------------------------------------------------:|
-<img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/google_cloud_logo.jpg?raw=true"> |
+<img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/google_cloud_logo.jpg?raw=true"> |
 
 
 
