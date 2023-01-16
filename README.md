@@ -4,10 +4,9 @@
 
 <br/>
 
-[Ankh PLM](https://github.com/agemagician/Ankh/) is providing **state of the art pre-trained models for proteins**. Ankh was trained on **TPU-V4**.
+[Ankh](https://github.com/agemagician/Ankh/) is the first protein language model trained on **TPU-V4** surpassing the state-of-the-art performance with dramatically less parameters
 
-
-This repository will be updated regulary with **new pre-trained models for proteins** as part of supporting **bioinformatics** community in general.
+This repository will be updated regulary with **new pre-trained models for proteins** in part of supporting the **biotech** community in revolutinizing protein engineering using AI.
 
 
 Table of Contents
