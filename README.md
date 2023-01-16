@@ -267,3 +267,23 @@ Table of Contents
 4. [Walid Moustafa](https://github.com/wmustafaawad) 
 5. [Mohamed Elkerdawy](https://github.com/melkerdawy) 
 6. [Charlotte Rochereau](https://github.com/crochereau)
+
+
+
+
+
+
+<a name="bug"></a>
+## 🤝&nbsp; Found a bug?
+
+Feel free to **file a new issue** with a respective title and description on the the [Ankh](https://github.com/agemagician/Ankh/issues) repository. If you already found a solution to your problem, **we would love to review your pull request**!.
++
+
+
+<a name="sponsors"></a>
+## 💰&nbsp; Sponsors
+
+
+           Google          |         Proteinea         |
+:-------------------------:|:-------------------------:|
+![](https://github.com/agemagician/Ankh/blob/master/images/google_cloud_logo.png?raw=true) | ![](https://github.com/agemagician/Ankh/blob/master/images/proteinea-square-logo.png?raw=true) |
