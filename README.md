@@ -1,4 +1,6 @@
 <br/>
+
+<img width=120 align="left" src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/ankh_logo.jpeg?raw=true">
 <h1 align="center">Ankh ☥: Optimized Protein Language Model</h1>
 <br/>
 
