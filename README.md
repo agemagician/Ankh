@@ -289,4 +289,4 @@ Feel free to **file a new issue** with a respective title and description on the
 
 |       Google Cloud       |         Proteinea         |
 :-------------------------:|:-------------------------:|
-<img width=120 height=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/google_cloud_logo.jpg?raw=true"> | <img width=120 height=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea_logo.jpg?raw=true"> |
+<img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/google_cloud_logo.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea_logo.jpg?raw=true"> |
