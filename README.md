@@ -51,7 +51,7 @@ Table of Contents
 |	CB513			                    |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['CB513.csv']})` |
 |	TS115			                    |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['TS115.csv']})` |
 |	DeepLoc		                    |    `load_dataset("proteinea/deeploc")`                                                            |
-| Fluorosence                   |    `load_dataset("proteinea/flourosence")`                                                        |
+| Fluorescence                  |    `load_dataset("proteinea/fluorescence")`                                                        |
 | Solubility                    |    `load_dataset("proteinea/solubility")`                                                         |
 | Nearest Neighbor Search       |    `load_dataset("proteinea/nearest_neighbor_search")`                                            |
 
@@ -233,9 +233,9 @@ Table of Contents
 
 
 <a name="Flu"></a>
- * <b>&nbsp; Fluorosence (Spearman Correlation):</b><br/>
+ * <b>&nbsp; Fluorescence (Spearman Correlation):</b><br/>
  
-|         Model            |    Fluorosence   |
+|         Model            |   Fluorescence   |
 |--------------------------|:----------------:|
 |**Ankh Large**            |        0.62      |
 |Ankh Base                 |        0.62      |
