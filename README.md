@@ -286,4 +286,4 @@ Feel free to **file a new issue** with a respective title and description on the
 
 |          Google          |         Proteinea         |
 :-------------------------:|:-------------------------:|
-![](https://github.com/agemagician/Ankh/blob/master/images/google_cloud_logo.png?raw=true) | ![](https://github.com/agemagician/Ankh/blob/master/images/proteinea-square-logo.png?raw=true) |
+![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/google_cloud_logo.png?raw=true) | ![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea-square-logo.png?raw=true) |
