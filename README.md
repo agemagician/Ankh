@@ -33,10 +33,10 @@ Table of Contents
 <a name="models"></a>
 ## &nbsp; Models Availability
 
-|               Model                |              ankh                 |              Hugging Face             |
-|------------------------------------|-----------------------------------|---------------------------------------|
-|             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-base)| 
-|             Ankh Base              |     `ankh.load_base_model()`      |          [Download](placeholder)      |
+|               Model                |              ankh                 |                        HuggingFace                        |
+|------------------------------------|-----------------------------------|-----------------------------------------------------------|
+|             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-large)| 
+|             Ankh Base              |     `ankh.load_base_model()`      |[Ankh Base](https://huggingface.co/ElnaggarLab/ankh-base)  |
 
 
 <a name="datasets"></a>
