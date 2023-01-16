@@ -129,4 +129,3 @@ dmypy.json
 .pyre/
 testing.ipynb
 .vscode
-examples/

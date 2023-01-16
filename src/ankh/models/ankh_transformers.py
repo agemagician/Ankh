@@ -1,6 +1,6 @@
 from transformers import (
-    T5EncoderModel, 
-    T5ForConditionalGeneration, 
+    T5EncoderModel,
+    T5ForConditionalGeneration,
     AutoTokenizer
 )
 from enum import Enum

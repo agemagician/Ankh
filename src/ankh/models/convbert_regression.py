@@ -12,7 +12,7 @@ class ConvBertForRegression(layers.BaseModule):
         hidden_dim: int,
         num_hidden_layers: int,
         num_layers: int = 1,
-        convsize: int = 7,
+        kernel_size: int = 7,
         dropout: float = 0.2,
         pooling: str = "max",
         training_labels_mean: float = None,
@@ -28,7 +28,7 @@ class ConvBertForRegression(layers.BaseModule):
             hidden_dim=hidden_dim,
             num_hidden_layers=num_hidden_layers,
             num_layers=num_layers,
-            convsize=convsize,
+            kernel_size=kernel_size,
             dropout=dropout,
             pooling=pooling,
         )
@@ -41,7 +41,7 @@ class ConvBertForRegression(layers.BaseModule):
                 hidden_dim: Integer specifying the hidden dimension for the `ConvBert` model.
                 num_hidden_layers: Integer specifying the number of hidden layers for the `ConvBert` model.
                 num_layers: Integer specifying the number of `ConvBert` layers.
-                convsize: Integer specifying the filter size for the `ConvBert` model. Default: 7
+                kernel_size: Integer specifying the filter size for the `ConvBert` model. Default: 7
                 dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
                 pooling: String specifying the global pooling function. Accepts "avg" or "max". Default: "max"
                 training_labels_mean: Float specifying the average of the training labels. Useful for faster and better training. Default: None

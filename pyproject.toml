@@ -21,6 +21,7 @@ python = "^3.7"
 biopython = "^1.80"
 transformers = "^4.25.1"
 sentencepiece = "^0.1.97"
+datasets = "^2.7.1"
 
 
 [build-system]
