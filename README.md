@@ -284,6 +284,10 @@ Feel free to **file a new issue** with a respective title and description on the
 ## &nbsp; Sponsors
 
 
+<!-- |          Google          |         Proteinea         |
+:-------------------------:|:-------------------------:|
+![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/google-cloud-logo.jpg?raw=true) | ![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea-square-logo.png?raw=true) | -->
+
 |          Google          |         Proteinea         |
 :-------------------------:|:-------------------------:|
-![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/google-cloud-logo.jpg?raw=true) | ![](https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea-square-logo.png?raw=true) |
+<img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/google-cloud-logo.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/proteinea-square-logo.png?raw=true"> |
