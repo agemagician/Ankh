@@ -25,7 +25,7 @@ Table of Contents
 * [&nbsp; Requirements](#requirements)
 * [&nbsp; Sponsors](#sponsors)
 * [&nbsp; Team](#team)
-* [&nbsp; License](#license)
+* [&nbsp; License](https://github.com/agemagician/Ankh/blob/readme_modifications/LICENSE.md)
 * [&nbsp; Citation](#citation)
 
 
@@ -265,8 +265,8 @@ Table of Contents
 
 * <b>Technical University of Munich:</b><br/>
 
-| [Ahmed Elnaggar](https://github.com/agemagician) | Burkhard Rost |
-|:-------------------------:|:-------------------------:|
+| [Ahmed Elnaggar](https://github.com/agemagician) |       Burkhard Rost       |
+|:------------------------------------------------:|:-------------------------:|
 | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/AhmedElNaggar.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/readme_modifications/images/Rost.jpg?raw=true"> |
 
 
