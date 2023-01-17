@@ -15,7 +15,6 @@ class AvailableModels(Enum):
     ANKH_BASE = "ElnaggarLab/ankh-base"
     ANKH_LARGE = "ElnaggarLab/ankh-large"
 
-
 def get_available_models() -> List:
     """Returns a `list` of the current available pretrained models.
 
