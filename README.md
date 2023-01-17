@@ -11,6 +11,8 @@
 <div align="center"><img width=500 height=350 src="https://github.com/agemagician/Ankh/blob/readme_modification/images/AnkhGIF.gif?raw=true"></div>
 
 
+
+
 This repository will be updated regulary with **new pre-trained models for proteins** in part of supporting the **biotech** community in revolutinizing protein engineering using AI.
 
 
