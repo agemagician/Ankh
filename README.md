@@ -38,7 +38,7 @@ Table of Contents
 <a name="models"></a>
 ## &nbsp; Models Availability
 
-|               Model                |              ankh                 |                        HuggingFace                        |
+|               Model                |              ankh                 |                        Hugging Face                        |
 |------------------------------------|-----------------------------------|-----------------------------------------------------------|
 |             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-large)| 
 |             Ankh Base              |     `ankh.load_base_model()`      |[Ankh Base](https://huggingface.co/ElnaggarLab/ankh-base)  |
@@ -47,7 +47,7 @@ Table of Contents
 <a name="datasets"></a>
 
 ## &nbsp; Datasets Availability
-|            Dataset            |                                            HuggingFace                                            |  
+|            Dataset            |                                            Hugging Face                                            |  
 | ----------------------------- |---------------------------------------------------------------------------------------------------|
 |	Remote Homology       	      |    `load_dataset("proteinea/remote_homology")`                                                    |
 |	CASP12			                  |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['CASP12.csv']})`|
