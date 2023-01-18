@@ -10,13 +10,19 @@ import numpy as np
 def create_parser() -> argparse.ArgumentParser:
     argparser = argparse.ArgumentParser()
     argparser.add_argument(
-        "--model", type=str, help="Whether to use the base model or the large model."
+        "--model",
+        type=str,
+        help="Whether to use the base model or the large model.",
     )
-    argparser.add_argument("--fasta_path", type=str, help="Location to the fasta file.")
+    argparser.add_argument(
+        "--fasta_path", type=str, help="Location to the fasta file."
+    )
     argparser.add_argument(
         "--output_path", type=str, help="Location to save the embeddings."
     )
-    argparser.add_argument("--use_gpu", type=bool, help="Whether to use GPU or not.")
+    argparser.add_argument(
+        "--use_gpu", type=bool, help="Whether to use GPU or not."
+    )
     return argparser
 
 
@@ -58,10 +64,13 @@ def main(args: argparse.Namespace) -> None:
                 return_tensors="pt",
             )
             embedding = model(input_ids=ids["input_ids"].to(device))[0]
-            current_embeddings = embedding[0].cpu().numpy()[shift_left:shift_right]
+            current_embeddings = (
+                embedding[0].cpu().numpy()[shift_left:shift_right]
+            )
             np.save(output_path / f"sequence_{idx}", current_embeddings)
 
 
 if __name__ == "__main__":
-    args = create_parser()
+    parser = create_parser()
+    args = parser.parse_args()
     main(args)
