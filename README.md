@@ -18,6 +18,7 @@ This repository will be updated regulary with **new pre-trained models for prote
 
 Table of Contents
 =================
+* [&nbsp; Installation](#install)
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
 * [&nbsp; Usage](#usage)
@@ -33,6 +34,13 @@ Table of Contents
 * [&nbsp; License](#license)
 * [&nbsp; Citation](#citation)
 
+
+<a name="install"></a>
+## &nbsp; Installation
+
+```python
+python -m pip install ankh
+```
 
 
 <a name="models"></a>
