@@ -5,7 +5,7 @@
 
 <br/>
 
-[Ankh](https://arxiv.org/abs/2301.06568) is the first general-purpose protein language model trained on Google's **TPU-V4** surpassing the state-of-the-art performance with dramatically less parameters, promoting accessibility to research innovation via attainable resources.
+[Ankh](https://github.com/agemagician/Ankh/) is the first general-purpose protein language model trained on Google's **TPU-V4** surpassing the state-of-the-art performance with dramatically less parameters, promoting accessibility to research innovation via attainable resources.
 
 
 <div align="center"><img width=500 height=350 src="https://github.com/agemagician/Ankh/blob/main/images/AnkhGIF.gif?raw=true"></div>
@@ -18,6 +18,7 @@ This repository will be updated regulary with **new pre-trained models for prote
 
 Table of Contents
 =================
+* [&nbsp; Installation](#install)
 * [&nbsp; Models Availability](#models)
 * [&nbsp; Dataset Availability](#datasets)
 * [&nbsp; Usage](#usage)
@@ -33,6 +34,14 @@ Table of Contents
 * [&nbsp; License](#license)
 * [&nbsp; Citation](#citation)
 
+
+<a name="install"></a>
+
+## &nbsp; Installation
+
+```python
+python -m pip install ankh
+```
 
 
 <a name="models"></a>
