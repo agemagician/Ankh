@@ -330,10 +330,9 @@ Feel free to **file a new issue** with a respective title and description on the
 If you use this code or our pretrained models for your publication, please cite the original paper:
 ```
 @article{elnaggar2023ankh,
-  title={Ankh☥: Optimized Protein Language Model Unlocks General-Purpose Modelling},
+  title={Ankh: Optimized Protein Language Model Unlocks General-Purpose Modelling},
   author={Elnaggar, Ahmed and Essam, Hazem and Salah-Eldin, Wafaa and Moustafa, Walid and Elkerdawy, Mohamed and Rochereau, Charlotte and Rost, Burkhard},
-  journal={bioRxiv},
-  year={2023},
-  publisher={Cold Spring Harbor Laboratory}
+  journal={arXiv preprint arXiv:2301.06568},
+  year={2023}
 }
 ```
