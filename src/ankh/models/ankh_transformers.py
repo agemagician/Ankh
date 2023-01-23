@@ -47,21 +47,42 @@ def load_pt_model(path, generation, output_attentions):
         )
 
 
-def get_specified_model(path, generation, output_attentions, tf):
-    if tf:
-        return load_tf_model(
-            path, generation=generation, output_attentions=output_attentions
-        )
-    else:
-        return load_pt_model(
-            path, generation=generation, output_attentions=output_attentions
-        )
+def load_onnx_model(path, generation, output_attentions):
+    raise NotImplementedError('`load_onnx_model` is not implemented yet.')
+
+
+class SupportedModelFormatFunctions(Enum):
+    PT = load_pt_model
+    TF = load_tf_model
+    ONNX = load_onnx_model
+
+
+def get_supported_model_format_functions() -> List:
+    """Returns a `list` of the current supported model formats.
+
+    Returns:
+        List: Supported model formats.
+    """
+    return [o.name.lower() for o in SupportedModelFormatFunctions]
+
+
+def get_specified_model(path: str,
+                        generation: bool,
+                        output_attentions: bool,
+                        model_format: str):
+
+    model_loading_function = getattr(SupportedModelFormatFunctions,
+                                     model_format.upper())
+
+    return model_loading_function(path,
+                                  generation=generation,
+                                  output_attentions=output_attentions)
 
 
 def load_base_model(
     generation: bool = False,
     output_attentions: bool = False,
-    tf=False,
+    model_format: str = 'pt',
 ) -> Tuple[T5EncoderModel, AutoTokenizer]:
     """Downloads and returns the base model and its tokenizer
 
@@ -73,6 +94,9 @@ def load_base_model(
         output_attentions (bool, optional): Whether to return the attention or
                                             not. Defaults to False.
 
+        model_format (str, optional): The model format, currently supports
+                                      'tf' and 'pt'. Defaults to 'pt'.
+
     Returns:
         Tuple[Union[T5EncoderModel, T5ForConditionalGeneration],
         AutoTokenizer]: Returns T5 Model and its tokenizer.
@@ -82,7 +106,7 @@ def load_base_model(
         path=AvailableModels.ANKH_BASE.value,
         generation=generation,
         output_attentions=output_attentions,
-        tf=tf,
+        model_format=model_format,
     )
     return model, tokenizer
 
@@ -90,7 +114,7 @@ def load_base_model(
 def load_large_model(
     generation: bool = False,
     output_attentions: bool = False,
-    tf=False,
+    model_format='pt',
 ) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration], AutoTokenizer]:
     """Downloads and returns the large model and its tokenizer
 
@@ -101,6 +125,8 @@ def load_large_model(
                                      be returned. Defaults to False.
         output_attentions (bool, optional): Whether to return the attention or
                                             not. Defaults to False.
+        model_format (str, optional): The model format, currently supports
+                                      'tf' and 'pt'. Defaults to 'pt'.
 
     Returns:
         Tuple[Union[T5EncoderModel, T5ForConditionalGeneration],
@@ -111,7 +137,7 @@ def load_large_model(
         path=AvailableModels.ANKH_LARGE.value,
         generation=generation,
         output_attentions=output_attentions,
-        tf=tf,
+        model_format=model_format,
     )
     return model, tokenizer
 
