@@ -2,7 +2,9 @@ from torch import nn
 from torch.nn import functional as F
 from transformers.modeling_outputs import TokenClassifierOutput
 from ankh.models import layers
-# __author__ = "Dan Ofer"
+
+# __author__ = "Dan Ofer - https://orcid.org/0000-0001-5136-8014"
+
 
 class ConvBertForMultiLabelClassification(layers.BaseModule):
     def __init__(
@@ -51,7 +53,9 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
 
     def _compute_loss(self, logits, labels):
         if labels is not None:
-            loss = F.binary_cross_entropy_with_logits(logits.view(-1, self.num_labels), labels.view(-1, self.num_labels))
+            loss = F.binary_cross_entropy_with_logits(
+                logits.view(-1, self.num_labels), labels.view(-1, self.num_labels)
+            )
         else:
             loss = None
         return loss
