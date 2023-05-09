@@ -9,6 +9,7 @@ from .models import (
     ConvBertForMultiClassClassification,
 )
 from .models import ConvBertForRegression
+from .models import ConvBertForMultiLabelClassification
 from typing import Union
 
 
@@ -16,6 +17,7 @@ available_tasks = {
     "binary": ConvBertForBinaryClassification,
     "regression": ConvBertForRegression,
     "multiclass": ConvBertForMultiClassClassification,
+    "multilabel": ConvBertForMultiLabelClassification,
 }
 
 
@@ -29,6 +31,7 @@ def load_downstream_model(
     ConvBertForBinaryClassification,
     ConvBertForMultiClassClassification,
     ConvBertForRegression,
+    ConvBertForMultiLabelClassification
 ]:
     return available_tasks[task]
 
