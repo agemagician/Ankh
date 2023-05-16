@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ankh"
-version = "1.0.0"
+version = "1.1.0"
 description = "Optimized Protein Language Model"
 authors = ["Ahmed Elnaggar <amit.najjar@gmail.com>", "Hazem Essam <hazemessam199@gmail.com>"]
 keywords = ["ankh"]
