@@ -3,8 +3,6 @@ from torch.nn import functional as F
 from transformers.modeling_outputs import TokenClassifierOutput
 from ankh.models import layers
 
-# __author__ = "Dan Ofer - https://orcid.org/0000-0001-5136-8014"
-
 
 class ConvBertForMultiLabelClassification(layers.BaseModule):
     def __init__(
