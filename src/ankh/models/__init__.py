@@ -4,6 +4,9 @@ from ankh.models.convbert_binary_classification import (
 from ankh.models.convbert_multiclass_classification import (
     ConvBertForMultiClassClassification,
 )
+from ankh.models.convbert_multilabel_classification import (
+    ConvBertForMultiLabelClassification,
+)
 from ankh.models.convbert_regression import ConvBertForRegression
 
 from .ankh_transformers import (
