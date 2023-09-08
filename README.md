@@ -287,7 +287,7 @@ python -m pip install ankh
 
 | [Hazem Essam](https://github.com/hazemessamm) | [Wafaa Ashraf](https://github.com/wafaaashraf) | [Walid Moustafa](https://github.com/wmustafaawad) | [Mohamed Elkerdawy](https://github.com/melkerdawy) | [Sarah Badawy](https://github.com/sarahbadawy) | [Mohamed Shaffei ](https://github.com/mo-shaffei) |
 |:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
-| <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/HazemEssam.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/WafaaAshraf.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/WalidMoustafa.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/MohamedElKerdawy.jpeg?raw=true"> |
+| <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/HazemEssam.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/WafaaAshraf.jpeg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/WalidMoustafa.jpg?raw=true"> | <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/MohamedElKerdawy.jpeg?raw=true"> || <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/IMG-20221113-WA0006~3.jpg?raw=true"> || <img width=120 src="https://github.com/agemagician/Ankh/blob/main/images/IMG_1378.jpg?raw=true"> |
 
 
 * <b>University of Columbia:</b><br/>
