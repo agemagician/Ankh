@@ -207,7 +207,7 @@ def solubility_inference(
         >>> print(soluble)
     """
 
-    encoded_sequence = tokenizer.encode(sequence)
+    encoded_sequence = tokenizer.encode(sequence, return_tensors='pt')
     model.eval()
     logits = model(encoded_sequence).logits
     soluble = torch.sigmoid(torch.tensor(logits)) > threshold
