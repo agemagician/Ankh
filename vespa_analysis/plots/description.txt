@@ -1,0 +1,9 @@
+1. Positional Conservation Class and SAV Effect Score Plot
+The x-axis is the position in the MSA aligned natural and generated sequences, y-axis is the Average conservation class for natural sequences per position and the Average SAV effect score for generated sequences per position. 
+  
+2. Conservation Class vs SAV Effect Relation: 
+The y-axis is the Average Conservation Class of each position in wildtype sequences and the x-axis is the Average SAV Effect Score of each position in generated sequences. 
+  So for each MSA position the y value represents the Average conservation class of this position in wildtype sequences and the x value represents the Average SAV effect of mutations introduced in this position in the generated sequences. 
+  A linear regression equation shows the relation between the two variables; the relation can be negative or positive according to the slope. 
+  Also Spearman correlation is calculated for both variables. 
+  Good generated data should have inverse correlation as mutations introduced to evolutionary conserved regions should have low effect since these regions are crucial for the protein’s function and stability
