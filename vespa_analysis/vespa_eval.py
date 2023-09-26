@@ -194,13 +194,7 @@ def plot(gen_name):
 cwd = os.getcwd()
 ## Parsing Input ##
 args = arg_parser()
-parsed_inputs = parse_input(args)
-ref_fasta = parsed_inputs[0]
-ref_name = parsed_inputs[1]
-gen_fasta = parsed_inputs[2]
-gen_name = parsed_inputs[3]
-cache_path = parsed_inputs[4]
-threads = parsed_inputs[5]
+ref_fasta, ref_name, gen_fasta, gen_name, cache_path, threads = parse_input(args)
 ## Converting fasta files to dictionaries
 ref_dict = fasta2dict(ref_fasta)
 gen_dict = fasta2dict(gen_fasta)
