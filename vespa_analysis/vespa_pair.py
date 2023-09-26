@@ -50,13 +50,7 @@ def arg_parser():
     return [mmseq_out,vesp_out,ref_id,ref_seq,gen_id,gen_seq]
 
 ##Parsing Inputs
-inputs = arg_parser()
-mmseq_out = inputs[0]
-vesp_out = inputs[1]
-ref_id = inputs[2]
-ref_seq = inputs[3]
-gen_id = inputs[4]
-gen_seq = inputs[5]
+mmseq_out, vesp_out, ref_id, ref_seq, gen_id, gen_seq = arg_parser()
 
 df_mm = pd.read_csv(mmseq_out,sep='\t',header=None)
 df_dummy = df_mm.loc[(df_mm[0]==gen_id) & (df_mm[1]==ref_id)]
