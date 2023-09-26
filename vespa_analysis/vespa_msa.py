@@ -53,13 +53,7 @@ def arg_parser():
     return [mapped_scores,ref_id,ref_aln,cons_class,gen_id,gen_aln]
 
 ##parsing inputs:
-inputs = arg_parser()
-mapped_scores = inputs[0]
-ref_id = inputs[1]
-ref_aln = inputs[2]
-cons_class = inputs[3]
-gen_id = inputs[4]
-gen_aln = inputs[5]
+mapped_scores, ref_id, ref_aln, cons_class, gen_id, gen_aln = arg_parser()
 
 sav_vector = sav_stats(gen_id,gen_aln,mapped_scores)
 cons_vector = cons_stats(ref_id,ref_aln,cons_class)
