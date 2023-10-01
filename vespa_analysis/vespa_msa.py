@@ -52,20 +52,20 @@ def arg_parser():
     gen_aln = args.gen_aln
     return [mapped_scores,ref_id,ref_aln,cons_class,gen_id,gen_aln]
 
-##parsing inputs:
-mapped_scores, ref_id, ref_aln, cons_class, gen_id, gen_aln = arg_parser()
-
-sav_vector = sav_stats(gen_id,gen_aln,mapped_scores)
-cons_vector = cons_stats(ref_id,ref_aln,cons_class)
-
-os.system('mkdir -p vespa_msa')
-os.chdir('vespa_msa')
-os.system('mkdir -p sav_stats')
-os.system('mkdir -p cons_stats')
-sav_score_path = os.path.join('sav_stats',gen_id+'_sav_scores.csv')
-cons_score_path = os.path.join('cons_stats',ref_id+'_cons_scores.csv')
-
-with open (sav_score_path, 'w') as s:
-    s.write(gen_id+','+str(sav_vector)[1:-1]+'\n')
-with open (cons_score_path, 'w') as s:
-    s.write(ref_id+','+str(cons_vector)[1:-1]+'\n')
+if __name__ == '__main__':
+    mapped_scores, ref_id, ref_aln, cons_class, gen_id, gen_aln = arg_parser()
+    
+    sav_vector = sav_stats(gen_id,gen_aln,mapped_scores)
+    cons_vector = cons_stats(ref_id,ref_aln,cons_class)
+    
+    os.system('mkdir -p vespa_msa')
+    os.chdir('vespa_msa')
+    os.system('mkdir -p sav_stats')
+    os.system('mkdir -p cons_stats')
+    sav_score_path = os.path.join('sav_stats',gen_id+'_sav_scores.csv')
+    cons_score_path = os.path.join('cons_stats',ref_id+'_cons_scores.csv')
+    
+    with open (sav_score_path, 'w') as s:
+        s.write(gen_id+','+str(sav_vector)[1:-1]+'\n')
+    with open (cons_score_path, 'w') as s:
+        s.write(ref_id+','+str(cons_vector)[1:-1]+'\n')
