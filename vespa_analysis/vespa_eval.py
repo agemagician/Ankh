@@ -191,21 +191,22 @@ def plot(gen_name):
     plt.ylabel('Positional Conservation Scores', fontsize=14)
     plt.savefig(gen_name+'_corr_score.png')
 
-cwd = os.getcwd()
-## Parsing Input ##
-args = arg_parser()
-ref_fasta, ref_name, gen_fasta, gen_name, cache_path, threads = parse_input(args)
-## Converting fasta files to dictionaries
-ref_dict = fasta2dict(ref_fasta)
-gen_dict = fasta2dict(gen_fasta)
-## Optmizing jobs and threads
-remainder_threads = optmize_threads(threads)
-## Running VESPA and MMSEQ ##
-vespa_out = run_vespa(ref_fasta,cache_path)
-mmseq_out = run_mmseq(gen_fasta,ref_fasta,gen_name,threads)
-## Mapping VESPA scores to Mutants ##
-pair_map(gen_dict,ref_dict,mmseq_out,vespa_out,threads)
-## Computing SAV and Conservation statistics ##
-msa_map(ref_fasta,gen_fasta,threads)
-## Plotting ##
-plot(gen_name)
+if __name__ == '__main__':
+    cwd = os.getcwd()
+    ## Parsing Input ##
+    args = arg_parser()
+    ref_fasta, ref_name, gen_fasta, gen_name, cache_path, threads = parse_input(args)
+    ## Converting fasta files to dictionaries
+    ref_dict = fasta2dict(ref_fasta)
+    gen_dict = fasta2dict(gen_fasta)
+    ## Optmizing jobs and threads
+    remainder_threads = optmize_threads(threads)
+    ## Running VESPA and MMSEQ ##
+    vespa_out = run_vespa(ref_fasta,cache_path)
+    mmseq_out = run_mmseq(gen_fasta,ref_fasta,gen_name,threads)
+    ## Mapping VESPA scores to Mutants ##
+    pair_map(gen_dict,ref_dict,mmseq_out,vespa_out,threads)
+    ## Computing SAV and Conservation statistics ##
+    msa_map(ref_fasta,gen_fasta,threads)
+    ## Plotting ##
+    plot(gen_name)
