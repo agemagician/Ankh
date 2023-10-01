@@ -49,31 +49,31 @@ def arg_parser():
     gen_seq = args.gen_seq
     return [mmseq_out,vesp_out,ref_id,ref_seq,gen_id,gen_seq]
 
-##Parsing Inputs
-mmseq_out, vesp_out, ref_id, ref_seq, gen_id, gen_seq = arg_parser()
-
-df_mm = pd.read_csv(mmseq_out,sep='\t',header=None)
-df_dummy = df_mm.loc[(df_mm[0]==gen_id) & (df_mm[1]==ref_id)]
-gen_aln = str(df_dummy.iat[0,2])
-ref_aln = str(df_dummy.iat[0,3])
-
-df_vesp = pd.read_csv(vesp_out,sep=';')
-vesp_dict=dict()
-vesp_dict = {list(df_vesp['Mutant'].values)[i]: list(df_vesp['VESPAl'].values)[i] for i in range(len(list(df_vesp['Mutant'].values)))}
-
-out_list = gen_score(ref_seq,gen_seq,ref_aln,gen_aln,vesp_dict)
-scores = out_list[0]
-g_inx = out_list[3]
-os.system('mkdir -p vespa_scores')
-df_out = pd.DataFrame()
-df_out['Mutation'] = list(scores.keys())
-df_out['Score'] = list(scores.values())
-df_out['Gen Seq Index'] = g_inx
-df_out.to_csv('vespa_scores/'+gen_id+'_vespa_scores.csv',index=False)
-
-aln_path = os.path.join('vespa_scores',gen_id+'_alignment.fasta')
-with open (aln_path,'w') as aln:
-    aln.write('>'+ref_id+'\n')
-    aln.write(out_list[1]+'\n')
-    aln.write('>'+gen_id+'\n')
-    aln.write(out_list[2]+'\n')
+if __name__ == '__main__':
+    mmseq_out, vesp_out, ref_id, ref_seq, gen_id, gen_seq = arg_parser()
+    
+    df_mm = pd.read_csv(mmseq_out,sep='\t',header=None)
+    df_dummy = df_mm.loc[(df_mm[0]==gen_id) & (df_mm[1]==ref_id)]
+    gen_aln = str(df_dummy.iat[0,2])
+    ref_aln = str(df_dummy.iat[0,3])
+    
+    df_vesp = pd.read_csv(vesp_out,sep=';')
+    vesp_dict=dict()
+    vesp_dict = {list(df_vesp['Mutant'].values)[i]: list(df_vesp['VESPAl'].values)[i] for i in range(len(list(df_vesp['Mutant'].values)))}
+    
+    out_list = gen_score(ref_seq,gen_seq,ref_aln,gen_aln,vesp_dict)
+    scores = out_list[0]
+    g_inx = out_list[3]
+    os.system('mkdir -p vespa_scores')
+    df_out = pd.DataFrame()
+    df_out['Mutation'] = list(scores.keys())
+    df_out['Score'] = list(scores.values())
+    df_out['Gen Seq Index'] = g_inx
+    df_out.to_csv('vespa_scores/'+gen_id+'_vespa_scores.csv',index=False)
+    
+    aln_path = os.path.join('vespa_scores',gen_id+'_alignment.fasta')
+    with open (aln_path,'w') as aln:
+        aln.write('>'+ref_id+'\n')
+        aln.write(out_list[1]+'\n')
+        aln.write('>'+gen_id+'\n')
+        aln.write(out_list[2]+'\n')
