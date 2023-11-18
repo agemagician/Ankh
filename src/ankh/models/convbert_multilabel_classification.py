@@ -15,6 +15,7 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
         num_layers: int = 1,
         kernel_size: int = 7,
         dropout: float = 0.2,
+        pooling: str = 'max'
     ):
         super(ConvBertForMultiLabelClassification, self).__init__(
             input_dim=input_dim,
@@ -24,7 +25,7 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
             num_layers=num_layers,
             kernel_size=kernel_size,
             dropout=dropout,
-            pooling=None,
+            pooling=pooling,
         )
         """
             ConvBert model for multilabel classification task.
@@ -60,6 +61,7 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
 
     def forward(self, embed, labels=None):
         hidden_inputs = self.convbert_forward(embed)
+        hidden_inputs = self.pooling(hidden_inputs)
         logits = self.decoder(hidden_inputs)
         loss = self._compute_loss(logits, labels)
 
