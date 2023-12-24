@@ -150,9 +150,10 @@ python -m pip install ankh
 <a name="q3"></a>
  * <b>&nbsp; Secondary Structure Prediction (Q3):</b><br/>
  
-|         Model            |      CASP12      | CASP14 (HARD) |     TS115     |    CB513     |
+|         Model            |      CASP12      |     CASP14    |     TS115     |    CB513     |
 |--------------------------|:----------------:|:-------------:|:-------------:|:------------:|
-|**Ankh Large**            |      83.59%      |     77.48%    |    88.22%     |    88.48%    |
+|**Ankh 2 Large**          |      84.18%      |     76.82%    |    88.59%     |    88.78%    |
+|Ankh Large                |      83.59%      |     77.48%    |    88.22%     |    88.48%    |
 |Ankh Base                 |      80.81%      |     76.67%    |    86.92%     |    86.94%    |
 |ProtT5-XL-UniRef50        |      83.34%      |     75.09%    |    86.82%     |    86.64%    |
 |ESM2-15B                  |      83.16%      |     76.56%    |    87.50%     |    87.35%    |
@@ -164,9 +165,10 @@ python -m pip install ankh
 <a name="q8"></a>
  * <b>&nbsp; Secondary Structure Prediction (Q8):</b><br/>
  
-|         Model            |      CASP12      | CASP14 (HARD) |     TS115     |    CB513     |
+|         Model            |      CASP12      |     CASP14    |     TS115     |    CB513     |
 |--------------------------|:----------------:|:-------------:|:-------------:|:------------:|
-|**Ankh Large**            |      71.69%      |     63.17%    |    79.10%     |    78.45%    |
+|**Ankh 2 Large**          |      72.90%      |     62.84%    |    79.88%     |    79.01%    |
+|Ankh Large                |      71.69%      |     63.17%    |    79.10%     |    78.45%    |
 |Ankh Base                 |      68.85%      |     62.33%    |    77.08%     |    75.83%    |
 |ProtT5-XL-UniRef50        |      70.47%      |     59.71%    |    76.91%     |    74.81%    |
 |ESM2-15B                  |      71.17%      |     61.81%    |    77.67%     |    75.88%    |
@@ -179,6 +181,7 @@ python -m pip install ankh
  
 |         Model            | ProteinNet (L/1) | ProteinNet (L/5) | CASP14 (L/1)  | CASP14 (L/5) |
 |--------------------------|:----------------:|:----------------:|:-------------:|:------------:|
+|Ankh 2 Large              |    In Progress   |    In Progress   |  In Progress  |  In Progress |
 |**Ankh Large**            |      48.93%      |      73.49%      |    16.01%     |    29.91%    |
 |Ankh Base                 |      43.21%      |      66.63%      |    13.50%     |    28.65%    |
 |ProtT5-XL-UniRef50        |      44.74%      |      68.95%      |    11.95%     |    24.45%    |
@@ -193,6 +196,7 @@ python -m pip install ankh
  
 |         Model            | ProteinNet (L/1) | ProteinNet (L/5) | CASP14 (L/1)  | CASP14 (L/5) |
 |--------------------------|:----------------:|:----------------:|:-------------:|:------------:|
+|Ankh 2 Large              |    In Progress   |    In Progress   |  In Progress  |  In Progress |
 |**Ankh Large**            |      31.44%      |      55.58%      |     11.05%    |    20.74%    |
 |Ankh Base                 |      25.93%      |      46.28%      |     9.32%     |    19.51%    |
 |ProtT5-XL-UniRef50        |      30.85%      |      51.90%      |     8.60%     |    16.09%    |
@@ -207,6 +211,7 @@ python -m pip install ankh
  
 |         Model            |  DeepLoc Dataset |
 |--------------------------|:----------------:|
+|Ankh 2 Large              |      82.57%      |
 |**Ankh Large**            |      83.01%      |
 |Ankh Base                 |      81.38%      |
 |ProtT5-XL-UniRef50        |      82.95%      |
@@ -221,8 +226,9 @@ python -m pip install ankh
  
 |         Model            |   SCOPe (Fold)   |
 |--------------------------|:----------------:|
+|**Ankh 2 Large**          |      62.09%      |
 |Ankh Large                |      61.01%      |
-|**Ankh Base**             |      61.14%      |
+|Ankh Base                 |      61.14%      |
 |ProtT5-XL-UniRef50        |      59.38%      |
 |ESM2-15B                  |      54.48%      |
 |ESM2-3B                   |      59.24%      |
@@ -235,6 +241,7 @@ python -m pip install ankh
  
 |         Model            |    Solubility    |
 |--------------------------|:----------------:|
+|Ankh 2 Large              |      75.86%      |
 |**Ankh Large**            |      76.41%      |
 |Ankh Base                 |      76.36%      |
 |ProtT5-XL-UniRef50        |      76.26%      |
@@ -249,6 +256,7 @@ python -m pip install ankh
  
 |         Model            |   Fluorescence   |
 |--------------------------|:----------------:|
+|Ankh 2 Large              |        0.62      |
 |**Ankh Large**            |        0.62      |
 |Ankh Base                 |        0.62      |
 |ProtT5-XL-UniRef50        |        0.61      |
@@ -263,6 +271,7 @@ python -m pip install ankh
  
 |         Model            |   Lookup69K (C)  |   Lookup69K (A)  |   Lookup69K (T)  |   Lookup69K (H)  |
 |--------------------------|:----------------:|:----------------:|:----------------:|:----------------:|
+|Ankh 2 Large              |    In Progress   |    In Progress   |    In Progress   |    In Progress   |
 |Ankh Large                |       0.83       |       0.72       |       0.60       |       0.70       |
 |**Ankh Base**             |       0.85       |       0.77       |       0.63       |       0.72       |
 |ProtT5-XL-UniRef50        |       0.83       |       0.69       |       0.57       |       0.73       |
