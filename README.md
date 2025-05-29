@@ -78,7 +78,6 @@ python -m pip install ankh
   model, tokenizer = ankh.load_ankh_large()
   model.eval()
 
-
   # Load Ankh base.
   model, tokenizer = ankh.load_ankh_base()
   model.eval()
