@@ -74,41 +74,52 @@ python -m pip install ankh
 ## &nbsp; Usage
 
 * Loading pre-trained models:
+
 ```python
   import ankh
 
   # To load large model:
-  model, tokenizer = ankh.load_large_model()
+  model, tokenizer = ankh.load_ankh_base()
   model.eval()
 
 
   # To load base model.
-  model, tokenizer = ankh.load_base_model()
+  model, tokenizer = ankh.load_ankh_large()
+  model.eval()
+
+  model, tokenizer = ankh.load_ankh3_large()
+  model.eval()
+
+  model, tokenizer = ankh.load_ankh3_xl()
   model.eval()
 ```
 
 * Feature extraction using ankh large example:
-```python
 
-  model, tokenizer = ankh.load_large_model()
+```python
+  model, tokenizer = ankh.load_ankh_large()
   model.eval()
 
-  protein_sequences = ['MKALCLLLLPVLGLLVSSKTLCSMEEAINERIQEVAGSLIFRAISSIGLECQSVTSRGDLATCPRGFAVTGCTCGSACGSWDVRAETTCHCQCAGMDWTGARCCRVQPLEHHHHHH', 
-  'GSHMSLFDFFKNKGSAATATDRLKLILAKERTLNLPYMEEMRKEIIAVIQKYTKSSDIHFKTLDSNQSVETIEVEIILPR']
+  protein_sequences = [
+    'MKALCLLLLPVLGLLVSSKTLCSMEEAINERIQEVAGSLIFRAISSIGLECQSVTSRGDLATCPRGFAVTGCTCGSACGSWDVRAETTCHCQCAGMDWTGARCCRVQPLEHHHHHH', 
+    'GSHMSLFDFFKNKGSAATATDRLKLILAKERTLNLPYMEEMRKEIIAVIQKYTKSSDIHFKTLDSNQSVETIEVEIILPR',
+  ]
 
   protein_sequences = [list(seq) for seq in protein_sequences]
 
-
-  outputs = tokenizer.batch_encode_plus(protein_sequences, 
-                                    add_special_tokens=True, 
-                                    padding=True, 
-                                    is_split_into_words=True, 
-                                    return_tensors="pt")
+  outputs = tokenizer(
+    protein_sequences, 
+    add_special_tokens=True, 
+    padding=True, 
+    is_split_into_words=True, 
+    return_tensors="pt",
+  )
   with torch.no_grad():
     embeddings = model(input_ids=outputs['input_ids'], attention_mask=outputs['attention_mask'])
 ```
 
 * Loading downstream models example:
+
 ```python
   # To use downstream model for binary classification:
   binary_classification_model = ankh.ConvBertForBinaryClassification(
@@ -119,7 +130,8 @@ python -m pip install ankh
     num_layers=1, 
     kernel_size=7, 
     dropout=0.2, 
-    pooling='max')
+    pooling='max',
+  )
 
   # To use downstream model for multiclass classification:
   multiclass_classification_model = ankh.ConvBertForMultiClassClassification(
@@ -130,7 +142,8 @@ python -m pip install ankh
     num_hidden_layers=1, 
     num_layers=1, 
     kernel_size=7, 
-    dropout=0.2)
+    dropout=0.2,
+  )
 
   # To use downstream model for regression:
   # training_labels_mean is optional parameter and it's used to fill the output layer's bias with it, 
@@ -144,7 +157,8 @@ python -m pip install ankh
     kernel_size=7, 
     dropout=0, 
     pooling='max', 
-    training_labels_mean=0.38145)
+    training_labels_mean=0.38145,
+  )
 ```
 
 
