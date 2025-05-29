@@ -56,7 +56,7 @@ python -m pip install ankh
 <a name="datasets"></a>
 
 ## &nbsp; Datasets Availability
-|            Dataset            |                                            Hugging Face                                            |  
+|            Dataset            |                                            Huggingface                                            |  
 | ----------------------------- |---------------------------------------------------------------------------------------------------|
 |	Remote Homology       	      |    `load_dataset("proteinea/remote_homology")`                                                    |
 |	CASP12			                  |    `load_dataset("proteinea/secondary_structure_prediction", data_files={'test': ['CASP12.csv']})`|
