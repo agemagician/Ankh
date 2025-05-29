@@ -74,18 +74,20 @@ python -m pip install ankh
 ```python
   import ankh
 
-  # To load large model:
+  # Load Ankh large:
   model, tokenizer = ankh.load_ankh_large()
   model.eval()
 
 
-  # To load base model.
+  # Load Ankh base.
   model, tokenizer = ankh.load_ankh_base()
   model.eval()
 
+  # Load Ankh3 Large
   model, tokenizer = ankh.load_ankh3_large()
   model.eval()
 
+  # Load Ankh3 XL
   model, tokenizer = ankh.load_ankh3_xl()
   model.eval()
 ```
