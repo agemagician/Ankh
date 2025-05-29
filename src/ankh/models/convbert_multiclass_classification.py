@@ -52,7 +52,9 @@ class ConvBertForMultiClassClassification(layers.BaseModule):
 
     def _compute_loss(self, logits, labels):
         if labels is not None:
-            loss = F.cross_entropy(logits.view(-1, self.num_labels), labels.view(-1))
+            loss = F.cross_entropy(
+                logits.view(-1, self.num_labels), labels.view(-1)
+            )
         else:
             loss = None
         return loss

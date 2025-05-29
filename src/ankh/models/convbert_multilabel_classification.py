@@ -15,7 +15,7 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
         num_layers: int = 1,
         kernel_size: int = 7,
         dropout: float = 0.2,
-        pooling: str = 'max'
+        pooling: str = "max",
     ):
         super(ConvBertForMultiLabelClassification, self).__init__(
             input_dim=input_dim,
@@ -53,7 +53,8 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
     def _compute_loss(self, logits, labels):
         if labels is not None:
             loss = F.binary_cross_entropy_with_logits(
-                logits.view(-1, self.num_labels), labels.view(-1, self.num_labels)
+                logits.view(-1, self.num_labels),
+                labels.view(-1, self.num_labels),
             )
         else:
             loss = None

@@ -7,7 +7,7 @@ import transformers.models.convbert as c_bert
 class GlobalMaxPooling1D(nn.Module):
     def __init__(self):
         """
-            Applies global max pooling over timesteps dimension
+        Applies global max pooling over timesteps dimension
         """
 
         super().__init__()
@@ -21,7 +21,7 @@ class GlobalMaxPooling1D(nn.Module):
 class GlobalAvgPooling1D(nn.Module):
     def __init__(self):
         """
-            Applies global average pooling over timesteps dimension
+        Applies global average pooling over timesteps dimension
         """
 
         super().__init__()
@@ -69,7 +69,10 @@ class BaseModule(nn.Module):
         )
 
         self.transformer_encoder = nn.ModuleList(
-            [c_bert.ConvBertLayer(encoder_layers_Config) for _ in range(num_layers)]
+            [
+                c_bert.ConvBertLayer(encoder_layers_Config)
+                for _ in range(num_layers)
+            ]
         )
 
         if pooling is not None:
