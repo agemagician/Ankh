@@ -46,11 +46,12 @@ python -m pip install ankh
 <a name="models"></a>
 ## &nbsp; Models Availability
 
-|               Model                |              ankh                 |                        Hugging Face                        |
-|------------------------------------|-----------------------------------|-----------------------------------------------------------|
-|             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-large)| 
-|             Ankh Base              |     `ankh.load_base_model()`      |[Ankh Base](https://huggingface.co/ElnaggarLab/ankh-base)  |
-
+|               Model                |              Ankh                 |                        Huggingface                          |
+|------------------------------------|-----------------------------------|-------------------------------------------------------------|
+|             Ankh Large             |     `ankh.load_large_model()`     |[Ankh Large](https://huggingface.co/ElnaggarLab/ankh-large)  | 
+|             Ankh Base              |     `ankh.load_base_model()`      |[Ankh Base](https://huggingface.co/ElnaggarLab/ankh-base)    |
+|             Ankh3 Large            |     `ankh.load_ankh3_large()`     |[Ankh3 Large](https://huggingface.co/ElnaggarLab/ankh3-large)|
+|             Ankh3 XL               |      `ankh.load_ankh3_xl()`       |[Ankh3 XL](https://huggingface.co/ElnaggarLab/ankh3-xl)      |
 
 <a name="datasets"></a>
 
