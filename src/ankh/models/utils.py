@@ -13,6 +13,12 @@ def deprecated_arg_warning(arg_name: str, arg_value: str, new_arg_name: str):
 
 
 def check_deprecated_args(deprecated_args: List[str], new_args: List[str]):
+    """Decorator to check for deprecated arguments.
+
+    Args:
+        deprecated_args (List[str]): List of deprecated arguments.
+        new_args (List[str]): List of new arguments.
+    """
     def _wrapper(func):
         @wraps(func)
         def _inner(*args, **kwargs):
@@ -24,7 +30,5 @@ def check_deprecated_args(deprecated_args: List[str], new_args: List[str]):
                     kwargs[new_arg] = kwargs[deprecated_arg]
                     del kwargs[deprecated_arg]
             return func(*args, **kwargs)
-
         return _inner
-
     return _wrapper

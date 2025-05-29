@@ -8,8 +8,7 @@ from ankh.models.convbert_multilabel_classification import (
     ConvBertForMultiLabelClassification,
 )
 from ankh.models.convbert_regression import ConvBertForRegression
-
-from .ankh_transformers import (
+from ankh.models.ankh_transformers import (
     get_available_models,
     load_ankh_base,
     load_ankh_large,
