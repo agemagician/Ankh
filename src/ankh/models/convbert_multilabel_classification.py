@@ -4,7 +4,7 @@ from transformers.modeling_outputs import TokenClassifierOutput
 from ankh.models import layers
 
 
-class ConvBertForMultiLabelClassification(layers.BaseModule):
+class ConvBERTForMultiLabelClassification(nn.Module):
     def __init__(
         self,
         num_tokens: int,
@@ -15,9 +15,27 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
         num_layers: int = 1,
         kernel_size: int = 7,
         dropout: float = 0.2,
-        pooling: str = "max",
     ):
-        super(ConvBertForMultiLabelClassification, self).__init__(
+        super().__init__()
+        """
+            ConvBERT model for multilabel classification task.
+            Args:
+                num_tokens: Integer specifying the number of tokens that
+                should be the output of the final layer.
+                input_dim: Dimension of the input embeddings.
+                nhead: Integer specifying the number of heads for the
+                `ConvBERT` model.
+                hidden_dim: Integer specifying the hidden dimension for the
+                `ConvBERT` model.
+                num_hidden_layers: Integer specifying the number of hidden
+                layers for the `ConvBERT` model.
+                num_layers: Integer specifying the number of `ConvBERT` layers.
+                kernel_size: Integer specifying the filter size for the
+                `ConvBERT` model. Default: 7
+                dropout: Float specifying the dropout rate for the
+                `ConvBERT` model. Default: 0.2
+        """
+        self.convbert = layers.ConvBERT(
             input_dim=input_dim,
             nhead=nhead,
             hidden_dim=hidden_dim,
@@ -25,27 +43,13 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
             num_layers=num_layers,
             kernel_size=kernel_size,
             dropout=dropout,
-            pooling=pooling,
+            pooling=None,
         )
-        """
-            ConvBert model for multilabel classification task.
-            Args:
-                num_tokens: Integer specifying the number of tokens that should be the output of the final layer.
-                input_dim: Dimension of the input embeddings.
-                nhead: Integer specifying the number of heads for the `ConvBert` model.
-                hidden_dim: Integer specifying the hidden dimension for the `ConvBert` model.
-                num_hidden_layers: Integer specifying the number of hidden layers for the `ConvBert` model.
-                num_layers: Integer specifying the number of `ConvBert` layers.
-                kernel_size: Integer specifying the filter size for the `ConvBert` model. Default: 7
-                dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
-        """
-
-        self.model_type = "Transformer"
         self.num_labels = num_tokens
         self.decoder = nn.Linear(input_dim, num_tokens)
-        self.init_weights()
+        self.reset_parameters()
 
-    def init_weights(self):
+    def reset_parameters(self):
         initrange = 0.1
         self.decoder.bias.data.zero_()
         self.decoder.weight.data.uniform_(-initrange, initrange)
@@ -61,8 +65,7 @@ class ConvBertForMultiLabelClassification(layers.BaseModule):
         return loss
 
     def forward(self, embed, labels=None):
-        hidden_inputs = self.convbert_forward(embed)
-        hidden_inputs = self.pooling(hidden_inputs)
+        hidden_inputs = self.convbert(embed)
         logits = self.decoder(hidden_inputs)
         loss = self._compute_loss(logits, labels)
 

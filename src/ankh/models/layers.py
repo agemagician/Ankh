@@ -1,7 +1,7 @@
 from torch import nn
 from functools import partial
 import torch
-import transformers.models.convbert as c_bert
+from transformers.models import convbert
 
 
 class GlobalMaxPooling1D(nn.Module):
@@ -32,7 +32,7 @@ class GlobalAvgPooling1D(nn.Module):
         return out
 
 
-class BaseModule(nn.Module):
+class ConvBERT(nn.Module):
     def __init__(
         self,
         input_dim: int,
@@ -59,7 +59,7 @@ class BaseModule(nn.Module):
         super().__init__()
 
         self.model_type = "Transformer"
-        encoder_layers_Config = c_bert.ConvBertConfig(
+        encoder_layers_Config = convbert.ConvBertConfig(
             hidden_size=input_dim,
             num_attention_heads=nhead,
             intermediate_size=hidden_dim,
@@ -70,7 +70,7 @@ class BaseModule(nn.Module):
 
         self.transformer_encoder = nn.ModuleList(
             [
-                c_bert.ConvBertLayer(encoder_layers_Config)
+                convbert.ConvBertLayer(encoder_layers_Config)
                 for _ in range(num_layers)
             ]
         )
@@ -85,7 +85,7 @@ class BaseModule(nn.Module):
                     f"Expected pooling to be [`avg`, `max`]. Recieved: {pooling}"
                 )
 
-    def convbert_forward(self, x):
+    def forward(self, x):
         for convbert_layer in self.transformer_encoder:
             x = convbert_layer(x)[0]
         return x

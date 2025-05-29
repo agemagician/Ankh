@@ -161,9 +161,7 @@ def load_ankh3_large(
     framework="pt",
 ) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration], AutoTokenizer]:
     """Downloads and returns the ankh3 large model and its tokenizer"""
-    tokenizer = T5Tokenizer.from_pretrained(
-        AvailableModels.ANKH3_LARGE.value
-    )
+    tokenizer = T5Tokenizer.from_pretrained(AvailableModels.ANKH3_LARGE.value)
     model = get_specified_model(
         path=AvailableModels.ANKH3_LARGE.value,
         generation=generation,
@@ -200,8 +198,10 @@ def load_model(
     generation: bool = False,
     output_attentions: bool = False,
     framework="pt",
-) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration],
-           Union[AutoTokenizer, T5Tokenizer]]:
+) -> Tuple[
+    Union[T5EncoderModel, T5ForConditionalGeneration],
+    Union[AutoTokenizer, T5Tokenizer],
+]:
     """Downloads and returns the specified model and its tokenizer
 
     Args:

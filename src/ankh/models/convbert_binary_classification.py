@@ -4,7 +4,7 @@ from transformers.modeling_outputs import SequenceClassifierOutput
 from ankh.models import layers
 
 
-class ConvBertForBinaryClassification(layers.BaseModule):
+class ConvBERTForBinaryClassification(nn.Module):
     def __init__(
         self,
         input_dim: int,
@@ -16,12 +16,33 @@ class ConvBertForBinaryClassification(layers.BaseModule):
         dropout: float = 0.2,
         pooling: str = "max",
     ):
+        super().__init__()
+
+        """
+            ConvBERT model for binary classification task.
+
+            Args:
+                input_dim: Dimension of the input embeddings.
+                nhead: Integer specifying the number of heads for the
+                `ConvBERT` model.
+                hidden_dim: Integer specifying the hidden dimension for the
+                `ConvBERT` model.
+                num_hidden_layers: Integer specifying the number of hidden
+                layers for the `ConvBERT` model.
+                num_layers: Integer specifying the number of `ConvBERT` layers.
+                kernel_size: Integer specifying the filter size for the
+                `ConvBERT` model. Default: 7
+                dropout: Float specifying the dropout rate for the
+                `ConvBERT` model. Default: 0.2
+                pooling: String specifying the global pooling function.
+                Accepts "avg" or "max". Default: "max"
+        """
         if pooling is None:
             raise ValueError(
-                '`pooling` cannot be `None` in a binary classification task. Expected ["avg", "max"].'
+                "`pooling` cannot be `None` in a binary classification task. "
+                "Expected ['avg', 'max']."
             )
-
-        super(ConvBertForBinaryClassification, self).__init__(
+        self.convbert = layers.ConvBERT(
             input_dim=input_dim,
             nhead=nhead,
             hidden_dim=hidden_dim,
@@ -31,25 +52,10 @@ class ConvBertForBinaryClassification(layers.BaseModule):
             dropout=dropout,
             pooling=pooling,
         )
-
-        """
-            ConvBert model for binary classification task.
-
-            Args:
-                input_dim: Dimension of the input embeddings.
-                nhead: Integer specifying the number of heads for the `ConvBert` model.
-                hidden_dim: Integer specifying the hidden dimension for the `ConvBert` model.
-                num_hidden_layers: Integer specifying the number of hidden layers for the `ConvBert` model.
-                num_layers: Integer specifying the number of `ConvBert` layers.
-                kernel_size: Integer specifying the filter size for the `ConvBert` model. Default: 7
-                dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
-                pooling: String specifying the global pooling function. Accepts "avg" or "max". Default: "max"
-        """
-
         self.decoder = nn.Linear(input_dim, 1)
-        self.init_weights()
+        self.reset_parameters()
 
-    def init_weights(self):
+    def reset_parameters(self):
         initrange = 0.1
         self.decoder.bias.data.zero_()
         self.decoder.weight.data.uniform_(-initrange, initrange)
@@ -62,8 +68,7 @@ class ConvBertForBinaryClassification(layers.BaseModule):
         return loss
 
     def forward(self, embed, labels=None):
-        hidden_inputs = self.convbert_forward(embed)
-        hidden_inputs = self.pooling(hidden_inputs)
+        hidden_inputs = self.convbert(embed)
         logits = self.decoder(hidden_inputs)
         loss = self._compute_loss(logits, labels)
 

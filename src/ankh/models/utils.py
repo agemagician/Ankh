@@ -10,6 +10,7 @@ def check_deprecated_args(deprecated_args: List[str], new_args: List[str]):
         deprecated_args (List[str]): List of deprecated arguments.
         new_args (List[str]): List of new arguments.
     """
+
     def _wrapper(func):
         @wraps(func)
         def _inner(*args, **kwargs):
@@ -25,5 +26,7 @@ def check_deprecated_args(deprecated_args: List[str], new_args: List[str]):
                     kwargs[new_arg] = kwargs[deprecated_arg]
                     del kwargs[deprecated_arg]
             return func(*args, **kwargs)
+
         return _inner
+
     return _wrapper
