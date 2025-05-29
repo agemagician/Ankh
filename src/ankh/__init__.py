@@ -1,4 +1,11 @@
-from .models import get_available_models, load_base_model, load_large_model, load_model
+from .models import get_available_models
+from .models import load_base_model
+from .models import load_large_model
+from .models import load_model
+from .models import load_ankh3_large
+from .models import load_ankh3_xl
+from .models import load_ankh_base
+from .models import load_ankh_large
 
 from .utils import FastaDataset, CSVDataset
 
