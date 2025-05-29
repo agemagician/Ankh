@@ -119,7 +119,7 @@ python -m pip install ankh
 
 ```python
   # To use downstream model for binary classification:
-  binary_classification_model = ankh.ConvBertForBinaryClassification(
+  binary_classification_model = ankh.ConvBERTForBinaryClassification(
     input_dim=768, 
     nhead=4, 
     hidden_dim=384, 
@@ -131,7 +131,7 @@ python -m pip install ankh
   )
 
   # To use downstream model for multiclass classification:
-  multiclass_classification_model = ankh.ConvBertForMultiClassClassification(
+  multiclass_classification_model = ankh.ConvBERTForMultiClassClassification(
     num_tokens=2, 
     input_dim=768, 
     nhead=4, 
@@ -145,7 +145,7 @@ python -m pip install ankh
   # To use downstream model for regression:
   # training_labels_mean is optional parameter and it's used to fill the output layer's bias with it, 
   # it's useful for faster convergence.
-  regression_model = ankh.ConvBertForRegression(
+  regression_model = ankh.ConvBERTForRegression(
     input_dim=768, 
     nhead=4, 
     hidden_dim=384, 
