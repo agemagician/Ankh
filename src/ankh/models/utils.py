@@ -6,7 +6,7 @@ from typing import List
 def deprecated_arg_warning(arg_name: str, arg_value: str, new_arg_name: str):
     warnings.warn(
         f"{arg_name} is deprecated and will be removed in the "
-        f"future. Please use {new_arg_name} instead. "
+        f"future. Please use `{new_arg_name}` instead. "
         f"Received: {arg_value}",
         DeprecationWarning,
         stacklevel=3,
