@@ -4,6 +4,7 @@ from transformers import (
     AutoTokenizer,
     TFT5EncoderModel,
     TFT5ForConditionalGeneration,
+    T5Tokenizer,
 )
 from enum import Enum
 from typing import List, Tuple, Union
@@ -56,7 +57,7 @@ def get_supported_frameworks() -> List:
     Returns:
         List: Supported model formats.
     """
-    return ["tf", "torch"]
+    return ["tf", "pt"]
 
 
 def get_specified_model(
@@ -67,7 +68,7 @@ def get_specified_model(
 ) -> Union[T5EncoderModel, T5ForConditionalGeneration]:
     if framework == "tf":
         return load_tf_model(path, generation, output_attentions)
-    elif framework == "torch":
+    elif framework == "pt":
         return load_pt_model(path, generation, output_attentions)
     else:
         supported_frameworks = get_supported_frameworks()
@@ -146,16 +147,20 @@ def load_large_model(
     return model, tokenizer
 
 
+load_ankh_large = load_large_model
+load_ankh_base = load_base_model
+
+
 @check_deprecated_args(
     deprecated_args=["model_format"], new_args=["framework"]
 )
-def load_ankh3_large_model(
+def load_ankh3_large(
     generation: bool = False,
     output_attentions: bool = False,
     framework="pt",
 ) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration], AutoTokenizer]:
     """Downloads and returns the ankh3 large model and its tokenizer"""
-    tokenizer = AutoTokenizer.from_pretrained(
+    tokenizer = T5Tokenizer.from_pretrained(
         AvailableModels.ANKH3_LARGE.value
     )
     model = get_specified_model(
@@ -170,13 +175,13 @@ def load_ankh3_large_model(
 @check_deprecated_args(
     deprecated_args=["model_format"], new_args=["framework"]
 )
-def load_ankh3_xl_model(
+def load_ankh3_xl(
     generation: bool = False,
     output_attentions: bool = False,
     framework="pt",
-) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration], AutoTokenizer]:
+) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration], T5Tokenizer]:
     """Downloads and returns the ankh3 xl model and its tokenizer"""
-    tokenizer = AutoTokenizer.from_pretrained(AvailableModels.ANKH3_XL.value)
+    tokenizer = T5Tokenizer.from_pretrained(AvailableModels.ANKH3_XL.value)
     model = get_specified_model(
         path=AvailableModels.ANKH3_XL.value,
         generation=generation,
@@ -194,7 +199,8 @@ def load_model(
     generation: bool = False,
     output_attentions: bool = False,
     framework="pt",
-) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration], AutoTokenizer]:
+) -> Tuple[Union[T5EncoderModel, T5ForConditionalGeneration],
+           Union[AutoTokenizer, T5Tokenizer]]:
     """Downloads and returns the specified model and its tokenizer
 
     Args:
