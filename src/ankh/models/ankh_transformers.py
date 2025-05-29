@@ -81,7 +81,7 @@ def get_specified_model(
 @check_deprecated_args(
     deprecated_args=["model_format"], new_args=["framework"]
 )
-def load_base_model(
+def load_ankh_base(
     generation: bool = False,
     output_attentions: bool = False,
     framework: str = "pt",
@@ -116,7 +116,7 @@ def load_base_model(
 @check_deprecated_args(
     deprecated_args=["model_format"], new_args=["framework"]
 )
-def load_large_model(
+def load_ankh_large(
     generation: bool = False,
     output_attentions: bool = False,
     framework="pt",
@@ -147,8 +147,9 @@ def load_large_model(
     return model, tokenizer
 
 
-load_ankh_large = load_large_model
-load_ankh_base = load_base_model
+# Aliases for backward compatibility.
+load_large_model = load_ankh_large
+load_base_model = load_ankh_base
 
 
 @check_deprecated_args(
