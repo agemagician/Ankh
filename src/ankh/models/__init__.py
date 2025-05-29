@@ -11,7 +11,11 @@ from ankh.models.convbert_regression import ConvBertForRegression
 
 from .ankh_transformers import (
     get_available_models,
-    load_base_model,
-    load_large_model,
+    load_ankh_base,
+    load_ankh_large,
+    load_ankh3_large,
+    load_ankh3_xl,
     load_model,
+    load_large_model,  # deprecated
+    load_base_model,  # deprecated
 )
