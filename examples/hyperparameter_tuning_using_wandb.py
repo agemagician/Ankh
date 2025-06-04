@@ -197,13 +197,16 @@ def solubility_inference(
                            binary classification.
         tokenizer (AutoTokenizer): Ankh Tokenizer.
         sequence (str): Input sequence that will be used as input to the model
-        threshold (float): Threshold for specifying whether the sequence is soluble or not.
+        threshold (float): Threshold for specifying whether the sequence
+        is soluble or not.
 
         >>> base_model, tokenizer = ankh.load_base_model()
         >>> model = SolubilityConvBertModel(base_model)
         >>> example_sequence = "MEQQMXMLLLMQM"
         >>> threshold = 0.5
-        >>> soluble = solubility_inference(model, tokenizer, example_sequence, threshold)
+        >>> soluble = solubility_inference(
+        ...     model, tokenizer, example_sequence, threshold
+        ... )
         >>> print(soluble)
     """
 

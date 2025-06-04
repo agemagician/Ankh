@@ -31,12 +31,11 @@ def validate_output_path(path: pathlib.Path) -> None:
         raise FileNotFoundError(f"File not found. Recieved path: {path}")
 
 
-def get_device(use_gpu):
+def get_device(use_gpu: bool) -> torch.device:
     if torch.cuda.is_available() and use_gpu:
         device = torch.device("cuda:0")
     else:
         device = torch.device("cpu")
-
     return device
 
 
@@ -47,6 +46,7 @@ def main(args: argparse.Namespace) -> None:
     validate_output_path(output_path)
 
     device = get_device(args.use_gpu)
+    print(f"Using device: {device}")
 
     shift_left = 0
     shift_right = -1

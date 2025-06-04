@@ -10,7 +10,7 @@ class ConvBERTForRegression(nn.Module):
         input_dim: int,
         nhead: int,
         hidden_dim: int,
-        num_hidden_layers: int,
+        num_hidden_layers: int = 1,
         num_layers: int = 1,
         kernel_size: int = 7,
         dropout: float = 0.2,

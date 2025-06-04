@@ -12,7 +12,6 @@ class ConvBERTForMultiClassClassification(nn.Module):
         nhead: int,
         hidden_dim: int,
         num_hidden_layers: int = 1,
-        num_layers: int = 1,
         kernel_size: int = 7,
         dropout: float = 0.2,
     ):
@@ -30,7 +29,6 @@ class ConvBERTForMultiClassClassification(nn.Module):
                 `ConvBERT` model.
                 num_hidden_layers: Integer specifying the number of hidden
                 layers for the `ConvBERT` model.
-                num_layers: Integer specifying the number of `ConvBERT` layers.
                 kernel_size: Integer specifying the filter size for the
                 `ConvBERT` model. Default: 7
                 dropout: Float specifying the dropout rate for the
@@ -42,7 +40,6 @@ class ConvBERTForMultiClassClassification(nn.Module):
             nhead=nhead,
             hidden_dim=hidden_dim,
             num_hidden_layers=num_hidden_layers,
-            num_layers=num_layers,
             kernel_size=kernel_size,
             dropout=dropout,
             pooling=None,

@@ -33,8 +33,8 @@ class FastaDataset(Dataset):
 
         if seqio is None:
             raise ImportError(
-                "In order to use `FastaDataset` class you need `biopython` installed. "
-                "Install it using `pip install biopython`."
+                "In order to use `FastaDataset` class you need `biopython` "
+                "installed. Install it using `pip install biopython`."
             )
 
         self.sequences = [
@@ -54,9 +54,12 @@ class CSVDataset(Dataset):
         A class for loading a CSV file.
 
         Args:
-            dataframe: `Dataself.Frame` instance that contains the sequences and labels.
-            sequences_column_name: String specifying the column name of the sequences.
-            labels_column_name: String specifying the column name of the labels.
+            dataframe: `Dataself.Frame` instance that contains the sequences
+            and labels.
+            sequences_column_name: String specifying the column name
+            of the sequences.
+            labels_column_name: String specifying the column name
+            of the labels.
         """
         self.df = dataframe
         self.seq_col_name = sequences_column_name

@@ -39,7 +39,6 @@ class ConvBERT(nn.Module):
         nhead: int,
         hidden_dim: int,
         num_hidden_layers: int = 1,
-        num_layers: int = 1,
         kernel_size: int = 7,
         dropout: float = 0.2,
         pooling: str = None,
@@ -49,12 +48,18 @@ class ConvBERT(nn.Module):
 
         Args:
             input_dim: Dimension of the input embeddings.
-            nhead: Integer specifying the number of heads for the `ConvBert` model.
-            hidden_dim: Integer specifying the hidden dimension for the `ConvBert` model.
-            nlayers: Integer specifying the number of layers for the `ConvBert` model.
-            kernel_size: Integer specifying the filter size for the `ConvBert` model. Default: 7
-            dropout: Float specifying the dropout rate for the `ConvBert` model. Default: 0.2
-            pooling: String specifying the global pooling function. Accepts "avg" or "max". Default: "max"
+            nhead: Integer specifying the number of heads for the
+            `ConvBert` model.
+            hidden_dim: Integer specifying the hidden dimension for the
+            `ConvBert` model.
+            nlayers: Integer specifying the number of layers for the
+            `ConvBert` model.
+            kernel_size: Integer specifying the filter size for the
+            `ConvBert` model. Default: 7
+            dropout: Float specifying the dropout rate for the
+            `ConvBert` model. Default: 0.2
+            pooling: String specifying the global pooling function.
+            Accepts "avg" or "max". Default: "max"
         """
         super().__init__()
 
@@ -64,16 +69,11 @@ class ConvBERT(nn.Module):
             num_attention_heads=nhead,
             intermediate_size=hidden_dim,
             conv_kernel_size=kernel_size,
-            num_hidden_layers=num_hidden_layers,
             hidden_dropout_prob=dropout,
+            num_hidden_layers=num_hidden_layers,
         )
 
-        self.transformer_encoder = nn.ModuleList(
-            [
-                convbert.ConvBertLayer(encoder_layers_Config)
-                for _ in range(num_layers)
-            ]
-        )
+        self.encoder = convbert.ConvBertModel(encoder_layers_Config).encoder
 
         if pooling is not None:
             if pooling in {"avg", "mean"}:
@@ -82,10 +82,26 @@ class ConvBERT(nn.Module):
                 self.pooling = GlobalMaxPooling1D()
             else:
                 raise ValueError(
-                    f"Expected pooling to be [`avg`, `max`]. Recieved: {pooling}"
+                    "Expected pooling to be [`avg`, `max`]. "
+                    f"Received: {pooling}"
                 )
 
-    def forward(self, x):
-        for convbert_layer in self.transformer_encoder:
-            x = convbert_layer(x)[0]
+    def get_extended_attention_mask(
+        self,
+        attention_mask: torch.LongTensor,
+    ) -> torch.Tensor:
+        extended_attention_mask = attention_mask[:, None, None, :]
+        extended_attention_mask = (
+            1.0 - extended_attention_mask
+        ) * torch.finfo(attention_mask.dtype).min
+        return extended_attention_mask
+
+    def forward(
+        self,
+        x: torch.FloatTensor,
+        attention_mask: torch.LongTensor | None = None,
+    ):
+        attention_mask = self.get_extended_attention_mask(attention_mask)
+        x = self.encoder(x, attention_mask=attention_mask)[0]
+        x = self.pooling(x)
         return x

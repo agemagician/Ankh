@@ -147,11 +147,6 @@ def load_ankh_large(
     return model, tokenizer
 
 
-# Aliases for backward compatibility.
-load_large_model = load_ankh_large
-load_base_model = load_ankh_base
-
-
 @check_deprecated_args(
     deprecated_args=["model_format"], new_args=["framework"]
 )
@@ -219,30 +214,14 @@ def load_model(
         Tuple[Union[T5EncoderModel, T5ForConditionalGeneration],
         AutoTokenizer]: Returns T5 Model and its tokenizer.
     """
-    if model_name == "ankh_base":
-        return get_specified_model(
-            path=AvailableModels.ANKH_BASE.value,
-            generation=generation,
-            output_attentions=output_attentions,
-            framework=framework,
-        )
-    elif model_name == "ankh_large":
-        return get_specified_model(
-            path=AvailableModels.ANKH_LARGE.value,
-            generation=generation,
-            output_attentions=output_attentions,
-            framework=framework,
-        )
-    elif model_name == "ankh3_large":
-        return get_specified_model(
-            path=AvailableModels.ANKH3_LARGE.value,
-            generation=generation,
-            output_attentions=output_attentions,
-            framework=framework,
-        )
-    elif model_name == "ankh3_xl":
-        return get_specified_model(
-            path=AvailableModels.ANKH3_XL.value,
+    available_models = {
+        "ankh_base": load_ankh_base,
+        "ankh_large": load_ankh_large,
+        "ankh3_large": load_ankh3_large,
+        "ankh3_xl": load_ankh3_xl,
+    }
+    if model_name in available_models:
+        return available_models[model_name](
             generation=generation,
             output_attentions=output_attentions,
             framework=framework,
