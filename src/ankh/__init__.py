@@ -18,6 +18,6 @@ from .models import (
 from .models import ConvBertForRegression
 from .models import ConvBertForMultiLabelClassification
 
-from .likelihood import compute_likelihood
+from .likelihood import compute_pseudo_likelihood
 
 __version__ = "1.0"
