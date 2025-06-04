@@ -8,8 +8,10 @@ from ankh.models.convbert_multilabel_classification import (
     ConvBERTForMultiLabelClassification,
 )
 from ankh.models.convbert_regression import ConvBERTForRegression
-from ankh.models.contact_prediction import ConvBERTForContactPrediction
-from ankh.models.contact_prediction import ContactPredictionHead
+from ankh.models.convbert_contact_prediction import (
+    ConvBERTForContactPrediction
+)
+from ankh.models.convbert_contact_prediction import ContactPredictionHead
 from ankh.models.ankh_transformers import (
     get_available_models,
     load_ankh_base,
