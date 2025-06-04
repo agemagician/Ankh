@@ -2,6 +2,7 @@ from torch import nn
 from functools import partial
 import torch
 from transformers.models import convbert
+from typing import Optional
 
 
 class GlobalMaxPooling1D(nn.Module):
@@ -99,7 +100,7 @@ class ConvBERT(nn.Module):
     def forward(
         self,
         x: torch.FloatTensor,
-        attention_mask: torch.LongTensor | None = None,
+        attention_mask: Optional[torch.LongTensor] = None,
     ):
         attention_mask = self.get_extended_attention_mask(attention_mask)
         x = self.encoder(x, attention_mask=attention_mask)[0]

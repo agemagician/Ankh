@@ -74,12 +74,12 @@ python -m pip install ankh
 ```python
   import ankh
 
-  # Load Ankh large:
-  model, tokenizer = ankh.load_ankh_large()
-  model.eval()
-
   # Load Ankh base.
   model, tokenizer = ankh.load_ankh_base()
+  model.eval()
+
+  # Load Ankh large.
+  model, tokenizer = ankh.load_ankh_large()
   model.eval()
 
   # Load Ankh3 Large
@@ -156,6 +156,22 @@ python -m pip install ankh
     pooling='max', 
     training_labels_mean=0.38145,
   )
+```
+
+* Calculating Likelihood
+
+```python
+import ankh
+
+seq = "MDDADPEERNYDNMLKMLSDLNKDLEKLLEEMEKISVQATWMAYDMVVMRTNPTLAESMRRLEDAFVNCKEEMEKNWQELLHETKQRL"
+likelihood = ankh.compute_pseudo_likelihood(
+  "ankh_base",
+  sequence,
+  device="cpu",
+  shard_input=True,
+  shard_batch_size=32,
+  verbose=True,
+)
 ```
 
 <a name="results"></a>

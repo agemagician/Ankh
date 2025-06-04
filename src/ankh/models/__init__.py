@@ -21,6 +21,8 @@ from ankh.models.ankh_transformers import (
     load_model,
 )
 
+from ankh.models.layers import ConvBERT
+
 # Aliases for backward compatibility.
 # Deprecated, will be removed in the future.
 ConvBertForBinaryClassification = ConvBERTForBinaryClassification

@@ -51,7 +51,7 @@ class ContactPredictionHead(nn.Module):
     def forward(
         self,
         hidden_states: torch.FloatTensor,
-        labels: torch.LongTensor | None = None,
+        labels: Optional[torch.LongTensor] = None,
     ) -> torch.FloatTensor:
         prod = hidden_states[:, :, None, :] * hidden_states[:, None, :, :]
         diff = hidden_states[:, :, None, :] - hidden_states[:, None, :, :]
@@ -102,8 +102,8 @@ class ConvBERTForContactPrediction(nn.Module):
     def forward(
         self,
         embd: torch.FloatTensor,
-        attention_mask: torch.LongTensor | None = None,
-        labels: torch.LongTensor | None = None,
+        attention_mask: Optional[torch.LongTensor] = None,
+        labels: Optional[torch.LongTensor] = None,
     ):
         if attention_mask is not None:
             extended_attention_mask = self.get_extended_attention_mask(
