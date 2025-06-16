@@ -203,7 +203,11 @@ likelihood = ankh.compute_pseudo_likelihood(
 
 |         Model            |      CASP12      |     CASP14    |     TS115     |    CB513     |
 |--------------------------|:----------------:|:-------------:|:-------------:|:------------:|
-|**Ankh 2 Large**          |      72.90%      |     62.84%    |    79.88%     |    79.01%    |
+|**Ankh3 XLarge (NLU)**    |      72.53%      |     69.85%    |    -          |    -         |
+|**Ankh3 XLarge (S2S)**    |      72.25%      |     69.51%    |    -          |    -         |
+|Ankh3 Large (NLU)         |      65.29%      |     65.50%    |    -          |    -         |
+|Ankh3 Large (S2S)         |      62.74%      |     65.88%    |    -          |    -         |
+|Ankh 2 Large              |      72.90%      |     62.84%    |    79.88%     |    79.01%    |
 |Ankh Large                |      71.69%      |     63.17%    |    79.10%     |    78.45%    |
 |Ankh Base                 |      68.85%      |     62.33%    |    77.08%     |    75.83%    |
 |ProtT5-XL-UniRef50        |      70.47%      |     59.71%    |    76.91%     |    74.81%    |
@@ -293,6 +297,10 @@ likelihood = ankh.compute_pseudo_likelihood(
 
 |         Model            |   Fluorescence   |
 |--------------------------|:----------------:|
+|Ankh3 XLarge (NLU)        |        0.64      |
+|**Ankh3 XLarge (S2S)**    |        0.65      |
+|Ankh3 Large (NLU)         |        0.65      |
+|Ankh3 Large (S2S)         |        0.65      |
 |Ankh 2 Large              |        0.62      |
 |**Ankh Large**            |        0.62      |
 |Ankh Base                 |        0.62      |
