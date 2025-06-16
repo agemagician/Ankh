@@ -1,17 +1,34 @@
 from ankh.models.convbert_binary_classification import (
-    ConvBertForBinaryClassification,
+    ConvBERTForBinaryClassification,
 )
 from ankh.models.convbert_multiclass_classification import (
-    ConvBertForMultiClassClassification,
+    ConvBERTForMultiClassClassification,
 )
 from ankh.models.convbert_multilabel_classification import (
-    ConvBertForMultiLabelClassification,
+    ConvBERTForMultiLabelClassification,
 )
-from ankh.models.convbert_regression import ConvBertForRegression
-
-from .ankh_transformers import (
+from ankh.models.convbert_regression import ConvBERTForRegression
+from ankh.models.convbert_contact_prediction import (
+    ConvBERTForContactPrediction
+)
+from ankh.models.convbert_contact_prediction import ContactPredictionHead
+from ankh.models.ankh_transformers import (
     get_available_models,
-    load_base_model,
-    load_large_model,
+    load_ankh_base,
+    load_ankh_large,
+    load_ankh3_large,
+    load_ankh3_xl,
     load_model,
 )
+
+from ankh.models.layers import ConvBERT
+
+# Aliases for backward compatibility.
+# Deprecated, will be removed in the future.
+ConvBertForBinaryClassification = ConvBERTForBinaryClassification
+ConvBertForMultiClassClassification = ConvBERTForMultiClassClassification
+ConvBertForMultiLabelClassification = ConvBERTForMultiLabelClassification
+ConvBertForRegression = ConvBERTForRegression
+ConvBertForContactPrediction = ConvBERTForContactPrediction
+load_large_model = load_ankh_large
+load_base_model = load_ankh_base
